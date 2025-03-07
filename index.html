@@ -1,0 +1,2816 @@
+<!DOCTYPE html><html lang="en"><head>
+    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tuhin Sarkar</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="icons8-webpage-48.png" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="style.css">
+
+
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+</head><body>
+   
+    
+      
+        <title>Parcel Sandbox</title>
+        <meta charset="UTF-8">
+      
+    
+      
+    
+    
+
+    
+       
+      
+    
+        <script>
+            (function () {
+              "use strict";
+              /*
+               * Form Validation
+               */
+      
+              // Fetch all the forms we want to apply custom validation styles to
+              const forms = document.querySelectorAll(".needs-validation");
+              const result = document.getElementById("result");
+              // Loop over them and prevent submission
+              Array.prototype.slice.call(forms).forEach(function (form) {
+                form.addEventListener(
+                  "submit",
+                  function (event) {
+                    if (!form.checkValidity()) {
+                      event.preventDefault();
+                      event.stopPropagation();
+      
+                      form.querySelectorAll(":invalid")[0].focus();
+                    } else {
+                      /*
+                       * Form Submission using fetch()
+                       */
+      
+                      const formData = new FormData(form);
+                      event.preventDefault();
+                      event.stopPropagation();
+                      const object = {};
+                      formData.forEach((value, key) => {
+                        object[key] = value;
+                      });
+                      const json = JSON.stringify(object);
+                      result.innerHTML = "Please wait...";
+      
+                      fetch("https://api.web3forms.com/submit", {
+                        method: "POST",
+                        headers: {
+                          "Content-Type": "application/json",
+                          Accept: "application/json"
+                        },
+                        body: json
+                      })
+                        .then(async (response) => {
+                          let json = await response.json();
+                          if (response.status == 200) {
+                            result.innerHTML = json.message;
+                            result.classList.remove("text-gray-500");
+                            result.classList.add("text-green-500");
+                          } else {
+                            console.log(response);
+                            result.innerHTML = json.message;
+                            result.classList.remove("text-gray-500");
+                            result.classList.add("text-red-500");
+                          }
+                        })
+                        .catch((error) => {
+                          console.log(error);
+                          result.innerHTML = "Something went wrong!";
+                        })
+                        .then(function () {
+                          form.reset();
+                          form.classList.remove("was-validated");
+                          setTimeout(() => {
+                            result.style.display = "none";
+                          }, 5000);
+                        });
+                    }
+                    form.classList.add("was-validated");
+                  },
+                  false
+                );
+              });
+            })();
+          </script>
+      
+    
+    
+  
+
+  <main>
+
+   <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar="">
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="facepic.png" alt="Tuhin Sarkar" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Tuhin Sarkar">Tuhin Sarkar</h1>
+          
+          <p class="title">Computer Programmer</p>
+     
+    
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <img src="gmail.png">
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:tuhinsarkar.me@gmail.com" class="contact-link" style="color:#f8d66e;" target="_blank">tuhinsarkar.me@gmail.com</a>
+            
+            </div>
+
+          </li>
+
+          
+          <li class="contact-item">
+
+            <div class="icon-box">
+             <img src="discord.png">
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Discord</p>
+             <p style="color:#f8d66e;">@tuhin.sarkar</p>
+          
+            </div>
+          </li>
+           
+          <li class="contact-item">
+
+            <div class="icon-box">
+             <img src="india.png">
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">(India) Timezone:</p>
+             <p style="color:#f8d66e;"><iframe src="https://free.timeanddate.com/clock/i9sni5pd/n438/tlin/fcf8d66e/tc1e1e1f/pc1e1e1f/tt0/tw0/tm3/td2/th2/ts1/ta1/tb1" frameborder="0" width="164" height="18"></iframe>
+             </p>
+          
+            </div>
+          </li>
+         
+
+
+
+     
+      </ul></div>
+      
+      
+                
+              
+  
+              
+  
+            
+             
+  
+            
+          
+  
+     
+  <br>
+         
+          <ul class="social-list">
+  
+  
+            <li class="social-item">
+              <a href="https://www.instagram.com/viperdoll__" class="social-link">
+                <img src="instagram.png">
+              </a>
+            </li>
+         
+            
+            <li class="social-item">
+              <a href="https://youtube.com/@viperdoll" class="social-link">
+                <img src="youtube.png">
+              </a>
+            </li>
+            <li class="social-item">
+              <a href="https://github.com/viperdoll" class="social-link">
+                <img src="github.png">
+              </a>
+            </li>
+            <li class="social-item">
+              <a href="https://x.com/viperdoll_" class="social-link">
+                <img src="x.png">
+              </a>
+            </li>
+            <li class="social-item">
+              <a href="https://reddit.com/u/awedaxel" class="social-link">
+                <img src="reddit.png">
+              </a>
+            </li>
+      
+  
+          </ul>
+  
+        
+        <br>  
+  
+      </aside>
+  
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link="">Home</button>
+          </li>
+
+          <li class="navbar-item">
+            <a class="navbar-link" data-nav-link="" href="education.html">Education</a>
+          </li>
+
+          <li class="navbar-item">
+            <a class="navbar-link" data-nav-link="" href="portfolio.html">Portfolio</a>
+          </li>
+
+          <li class="navbar-item">
+            <a class="navbar-link" data-nav-link="" href="https://sarknet.blogspot.com">Blog</a>
+          </li>
+
+        
+
+          <li class="navbar-item">
+            <a class="navbar-link" data-nav-link="" href="contact.html">Contact</a>
+          </li>
+
+
+
+        </ul>
+
+      </nav>
+
+
+
+
+
+      <!--
+        - #Home
+      -->
+     
+              
+      <article class="home  active" data-page="home">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+        <section class="clients">
+
+
+
+  
+
+</section>
+<style>
+  .responsive-iframe {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      overflow: hidden;
+  }
+
+  .responsive-iframe iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0; /* Remove default border */
+  }
+</style>
+
+<div class="responsive-iframe">
+  <iframe src="https://www.youtube.com/embed/fSIoAv9KcCg?si=qlJCp23g1B6EL_do" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
+  </iframe>
+</div>
+<br>
+        <section class="about-text">
+          <p>
+            
+            I'm a front-end web developer and designer from Bangalore, India. I specialize in HTML, CSS, and JavaScript. I enjoy turning complex problems into simple, beautiful, and intuitive designs. I create functional, user-friendly, and eye-catching designs.
+          </p>
+
+          <p>
+            My skills encompass both front-end and back-end development, allowing me to build websites of all types, static or dynamic. I prioritize functionality while ensuring a user-friendly and attractive experience. Additionally, I bring a personal touch to your product, making it both visually appealing and easy to use. My goal is to creatively convey your message and brand identity.  
+          </p>
+          <a href="https://notbyai.fyi/">
+            <div class="logos__marquee">
+              <div class="marquee__logos"><img src="Created-By-Human-Not-By-AI-Badge-white%402x.png" width="auto" height="50" loading="eager" alt="Created by Human" class="intro-logos_logo"><img src="Designed-By-Human-Not-By-AI-Badge-white%402x.png" width="auto" height="54" loading="eager" alt="Designed by Human" class="intro-logos_logo"><img src="Developed-By-Human-Not-By-AI-Badge-white%402x.png" width="auto" height="54" loading="eager" alt="Developed by Human" class="intro-logos_logo"><img src="Produced-By-Human-Not-By-AI-Badge-white%402x.png" width="auto" height="54" loading="eager" alt="Produced by Human" class="intro-logos_logo"><img src="Researched-By-Human-Not-By-AI-Badge-white%402x.png" width="auto" height="54" loading="eager" alt="Researched by Human" class="intro-logos_logo"><img src="Written-By-Human-Not-By-AI-Badge-white%402x.png" width="auto" height="54" loading="eager" alt="Written by Human" class="intro-logos_logo"></div>
+              <div class="marquee__logos" aria-hidden="true"><img src="Created-By-Human-Not-By-AI-Badge-white%402x.png" width="auto" height="54" loading="eager" alt="Created by Human" class="intro-logos_logo"><img src="Designed-By-Human-Not-By-AI-Badge-white%402x.png" width="auto" height="54" loading="eager" alt="Designed by Human" class="intro-logos_logo"><img src="Developed-By-Human-Not-By-AI-Badge-white%402x.png" width="auto" height="54" loading="eager" alt="Developed by Human" class="intro-logos_logo"><img src="Produced-By-Human-Not-By-AI-Badge-white%402x.png" width="auto" height="54" loading="eager" alt="Produced by Human" class="intro-logos_logo"><img src="Researched-By-Human-Not-By-AI-Badge-white%402x.png" width="auto" height="54" loading="eager" alt="Researched by Human" class="intro-logos_logo"><img src="Written-By-Human-Not-By-AI-Badge-white%402x.png" width="auto" height="54" loading="eager" alt="Written by Human" class="intro-logos_logo"></div>
+            </div>
+            </a>
+        </section>
+  
+
+        
+<br< br="">
+<br>
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">What I'm doing</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="web.png" alt="Web development icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Web development</h4>
+
+                <p class="service-item-text">
+                  Professional level web development of static and dynamic websites.
+                </p>
+              </div>
+
+            </li>
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="cyber.png" alt="Web development icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Ethical Cybersecurity Specialist</h4>
+
+                <p class="service-item-text">
+                  Penetration testing and Digital forensics on my fingertips!
+                </p>
+              </div>
+
+            </li>
+
+          
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="app.png" alt="mobile app icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Mobile apps</h4>
+
+                <p class="service-item-text">
+                 App Development taken to a whole new level for Android and IOS.
+                </p>
+              </div>
+            </li>
+           
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="movie.png" alt="camera icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Documentaries (Blogs and Essays)</h4>
+
+                <p class="service-item-text">
+                  I make professional documentaries in the form of: <a href="https://youtube.com/@viperdoll" target="_blank" style="color:#f8d66e;">Videos</a>and<a href="https://sarknet.blogspot.com" style="color:#f8d66e;">Blogs</a></p>
+                <p></p>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+
+        <!--
+          - testimonials
+        -->
+
+        <section class="testimonials">
+
+          <h3 class="h3 testimonials-title">Testimonials</h3>
+
+          <ul class="testimonials-list has-scrollbar">
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item="">
+
+                <figure class="testimonials-avatar-box">
+                  <img src="shritish-modified.png" alt="Shritish Parram" width="60" data-testimonials-avatar="">
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title="">Shritish Parram</h4>
+               
+                <div class="testimonials-text" data-testimonials-text="">
+<p>
+  <strong>I'm thrilled with my new portfolio website by Tuhin Sarkar!</strong>
+  
+</p>
+<br>
+<p>I recently collaborated with Tuhin Sarkar to create a professional portfolio website,
+  and I couldn't be happier with the results.  Tuhin was incredibly professional throughout the entire process. Communication was smooth and easy – they kept me updated on the progress and were always available to answer any questions I had.</p>
+<br>
+  <p>The best part?
+    The website itself is fantastic! Tuhin perfectly captured the look and feel I was going for, and the finished product is exactly what I envisioned.  On top of that, Tuhin was able to deliver the website on time, which was a huge plus for me.</p>
+<br>
+    <p>Overall,
+      I highly recommend Tuhin Sarkar for anyone looking for a professional and reliable web developer. He is skilled, communicative, and very affordable. Thanks again, Tuhin!</p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item="">
+
+                <figure class="testimonials-avatar-box">
+                  <img src="eesha.png" alt="Eesha Subudhi" width="60" data-testimonials-avatar="">
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title="">Eesha Subudhi</h4>
+               
+                <div class="testimonials-text" data-testimonials-text="">
+<p>
+  <strong>Hi, my name is Eesha, and I was one of the members of the presentation given by Tuhin and our team. As someone who struggles with stage fright, social anxiety, and other challenges that made me very nervous, I was truly grateful for Tuhin’s unwavering support.</strong>
+  
+</p>
+<br>
+  <p>While watching other teams stutter and struggle, I noticed Tuhin’s eyes light up with increasing courage as team after team faced difficulties. Even though Tuhin remained strong and confident, I felt uneasy, thinking that since those teams struggled, maybe we would too, or perhaps I might make a big mistake. Despite Tuhin's efforts to console and reassure me that we would be fine, I couldn’t shake off my nervousness.</p>
+<br>
+    <p>In summary, working with Tuhin was a great decision, and I look forward to doing so again in the future. He was a very professional and capable leader who reassured us throughout. Thank you, Tuhin Sarkar, for being an excellent leader.</p>
+                </div>
+
+              </div>
+            </li>
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item="">
+
+                <figure class="testimonials-avatar-box">
+                  <img src="mohan.png" alt="Mohan Subhash Jeella" width="60" data-testimonials-avatar="">
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title="">Mohan Subhash Jeella</h4>
+               
+                <div class="testimonials-text" data-testimonials-text="">
+<p>
+  <strong>Working with Tuhin Sarkar on our school's Sustainable Development Goals presentation was great.</strong>
+  
+</p>
+<br>
+<p>Tuhin is very professional and pays close attention to details. I was really impressed by the cool scrolling animation he made using the morph transition in PowerPoint—it made our presentation stand out.</p>
+<br>
+  <p>I only did some research and printing, but Tuhin’s hard work and creativity made our presentation a success. It was awesome to be on his team, and I’m really happy with how everything turned out.</p>
+
+                </div>
+
+              </div>
+            </li>
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item="">
+
+                <figure class="testimonials-avatar-box">
+                  <img src="meemansa.png" alt="Meemansa Pal" width="60" data-testimonials-avatar="">
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title="">Meemansa Pal</h4>
+               
+                <div class="testimonials-text" data-testimonials-text="">
+<p>
+  <strong>Working with Tuhin Sarkar on our SDG presentation was an incredible experience.</strong>
+  
+</p>
+<br>
+<p>Tuhin is a perfectionist and brings a level of professionalism that truly elevates the entire team. His leadership made our meetings so effective and organized that my mom mistook them for my dad's official office meetings! Tuhin's dedication and skills were so impressive that Eesha even expressed concerns about our contributions being overshadowed by his competence. But Tuhin ensured everyone had a role and encouraged us all to perform at our best.</p>
+<br>
+  <p>After the presentation, I couldn’t help but apologize, thinking I might have 'ruined' it somehow, but Tuhin’s confidence and flawless delivery made it clear that if we win—and I believe we will—it’s all thanks to him. I couldn’t have asked for a better teammate and leader.</p>
+
+                </div>
+
+              </div>
+            </li>
+
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item="">
+
+                <figure class="testimonials-avatar-box">
+                  <img src="vinaypfp.png" alt="Vinay" width="60" data-testimonials-avatar="">
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title="">Vinay Kumar</h4>
+
+                <div class="testimonials-text" data-testimonials-text="">
+                  <p>
+                    Tuhin was super easy to talk to throughout the whole process. He always kept me updated on the progress and delivered the website exactly when he said he would.
+
+                  </p>
+                  <p>The website looks amazing!
+                    It's very professional and exactly what I was looking for.</p>
+                    <p>If you're looking for someone to build a website,
+                      I can't recommend Tuhin enough. He's professional, communicates well, and creates high-quality work at an affordable price. Thanks again, Tuhin!</p>
+                </div>
+
+              </div>
+            </li>
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item="">
+
+                <figure class="testimonials-avatar-box">
+                  <img src="kasiface.png" alt="Kasi" width="60" data-testimonials-avatar="">
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title="">Kasi Satya</h4>
+
+                <div class="testimonials-text" data-testimonials-text="">
+                  <p>
+                    Tuhin, I just wanted to take a moment to express how satisfied I am with your work. 
+
+                  </p>
+<p>You've truly gone above and beyond my expectations! Not only did you deliver exceptional results, but you were also incredibly easy to work with throughout the entire process. Your attention to detail and commitment to ensuring that everything was done exactly how I wanted it is truly commendable. I couldn't be happier with the outcome, and I look forward to working with you again in the future. Thank you for your professionalism and expertise!</p>
+                </div>
+
+              </div>
+            </li>
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item="">
+
+                <figure class="testimonials-avatar-box">
+                  <img src="md-modified.png" alt="Kasi" width="60" data-testimonials-avatar="">
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title="">Nishanth Chinthaginjal</h4>
+
+                <div class="testimonials-text" data-testimonials-text="">
+                  <p>
+                    I just wanted to take a moment to share my wonderful experience working with Tuhin.
+
+                  </p>
+<p>From the very beginning, Tuhin was incredibly easy to work with. He took the time to understand exactly what I needed and delivered the work precisely as I wanted. His attention to detail and dedication to getting everything just right really stood out. I'm extremely satisfied with the final product and would highly recommend Tuhin to anyone looking for quality work and a smooth, hassle-free collaboration. Thank you, Tuhin, for your excellent service!
+
+
+
+
+
+
+
+</p>
+                </div>
+
+              </div>
+            </li>
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item="">
+
+                <figure class="testimonials-avatar-box">
+                  <img src="t7-modified.png" alt="T7" width="60" data-testimonials-avatar="">
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title="">T7</h4>
+
+                <div class="testimonials-text" data-testimonials-text="">
+                  <p>
+                    Tuhin, man, this dude delivered!
+  Got my site up and runnin' in no time, like a ninja with code.  Communication was on point, kept me in the loop the whole way through.  Dude even worked with my budget, which was tight.
+ 
+ 
+                  </p>
+                  <p>Most importantly, the website itself? Fire!  Clean, professional, exactly what I needed to impress potential clients.  Seriously, Tuhin here's the real deal. If you need a website built, hit him up. You won't regret it.</p>
+                </div>
+
+              </div>
+            </li>
+            
+
+                 
+                
+
+             
+
+                <div class="testimonials-text" data-testimonials-text="">
+                  
+
+              </div>
+            
+
+          </ul>
+
+        </section>
+
+
+        <!--
+          - testimonials modal
+        -->
+
+        <div class="modal-container" data-modal-container="">
+
+          <div class="overlay" data-overlay=""></div>
+
+          <section class="testimonials-modal">
+
+            <button class="modal-close-btn" data-modal-close-btn="">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src="avatar-1.png" alt="Shritish Parram" width="80" data-modal-img="">
+              </figure>
+
+              <img src="icon-quote.svg" alt="quote icon">
+            </div>
+
+            <div class="modal-content">
+
+              <h4 class="h3 modal-title" data-modal-title="">Shritish Parram</h4>
+
+              
+
+              <div data-modal-text="">
+                <p>
+                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                  lot of experience
+                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                  consectetur adipiscing
+                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                </p>
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+
+
+   
+     
+
+          <header>
+            <h3 class="h3 article-title">Older versions of my website</h3>
+          </header>
+          <h5 class="h5 clients-title">Are you experiencing any bugs? Do you want to roll back to a previous version of my website, or are you just interested in viewing an earlier version?</h5>
+        <br>
+          <section class="projects">
+  
+
+  
+      
+  
+            <ul class="project-list">
+  
+              <li class="project-item  active" data-filter-item="" data-category="web development">
+                <a href="https://web.archive.org/web/20240807132338/https://tuhinsarkar.netlify.app/">
+  
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+  
+                    <img src="v3.png" alt="finance" loading="lazy">
+                  </figure>
+  
+                  <h3 class="project-title">Portfolio (V3)</h3>
+  
+                  <p class="project-category">Version 3</p>
+  
+                </a>
+              </li>
+  
+              <li class="project-item  active" data-filter-item="" data-category="web development">
+                <a href="https://web.archive.org/web/20240513101254/https://tuhinsarkar-xyz.github.io/">
+  
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+  
+                    <img src="v2.png" alt="orizon" loading="lazy">
+                  </figure>
+  
+                  <h3 class="project-title">Portfolio (V2)</h3>
+  
+                  <p class="project-category">Version 2</p>
+  
+                </a>
+              </li>
+             
+              <li class="project-item  active" data-filter-item="" data-category="web development">
+                <a href="https://web.archive.org/web/20240807132338/https://web.archive.org/web/20240428070340/https://tuhin-sarkar-it.github.io/tuhin-portfolio.github.io/">
+  
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+  
+                    <img src="v1.png" alt="orizon" loading="lazy">
+                  </figure>
+  
+                  <h3 class="project-title">Portfolio (V1)</h3>
+  
+                  <p class="project-category">Version 1</p>
+  
+                </a>
+              </li>
+
+  
+   </ul>
+   </section>
+        <br>
+   <section class="timeline">
+
+    <h3 class="h3 article-title">Programming Languages</h3>
+
+
+<ul class="clients-list has-scrollbar">
+
+        
+
+    <ul class="clients-list has-scrollbar">
+
+      <li class="clients-item">
+        <a href="#">
+          <img src="https://icons.iconarchive.com/icons/cornmanthe3rd/plex/512/Other-html-5-icon.png" alt="HTML">
+        </a>
+      </li>
+
+      <li class="clients-item">
+        <a href="#">
+          <img src="https://img.icons8.com/color/512/css3.png" alt="CSS">
+        </a>
+      </li>
+
+      <li class="clients-item">
+        <a href="#">
+          <img src="https://cdn.freelogovectors.net/wp-content/uploads/2023/07/javascript_logo-freelogovectors.net_.png" alt="JavaScript">
+        </a>
+      </li>
+
+      <li class="clients-item">
+        <a href="#">
+          <img src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png" alt="C++">
+        </a>
+      </li>
+
+
+    </ul>
+  
+</ul></section>
+<h3 class="h3 clients-title">Other tech skills</h3>
+
+
+<ul class="clients-list has-scrollbar">
+
+  <li class="clients-item">
+    <a href="#">
+      <img src="https://admin.electrotec.pe/elements/images/image-1dd5f10f4411073292713a69410c93ca.png" alt="Arudino">
+    </a>
+  </li>
+
+  <li class="clients-item">
+    <a href="#">
+      <img src="https://www.pngall.com/wp-content/uploads/13/AWS-Logo-PNG-File.png" alt="Amazon AWS">
+    </a>
+  </li>
+
+  <li class="clients-item">
+    <a href="#">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/The_GIMP_icon_-_gnome.svg/1200px-The_GIMP_icon_-_gnome.svg.png" alt="GIMP">
+    </a>
+  </li>
+
+  <li class="clients-item">
+    <a href="#">
+      <img src="https://www.syprus.com/paintnet/PaintDotNet_3.png" alt="Paint.net">
+    </a>
+  </li>
+
+  <li class="clients-item">
+    <a href="#">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiMOqle7RHdH3vADJBm-Yct9fi5N9Vva6JIkPby4-sqAACG7lG66oEg4plx2p5WOgI36kgBje1Orelf1wjpLnqo6TELqbB0phLBAXYnFsHHZTpWZw8RNXM8NHdD5HV0sT5rbTkx30K_6bX5ycpSHCLwM9y9r-uZGwRowSPLfea2OsxYARXUydaZOQiDRdE/s256/Filmora-13.png" alt="Wondershare Filmora">
+    </a>
+  </li>
+
+  <li class="clients-item">
+    <a href="#">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/800px-Tux.svg.png" alt="Linux">
+    </a>
+  </li>
+  <li class="clients-item">
+    <a href="#">
+      <img src="https://img.icons8.com/?size=512&id=M9BRw0RJZXKi&format=png" alt="Windows 11">
+    </a>
+  </li>
+  <li class="clients-item">
+    <a href="#">
+      <img src="https://static-00.iconduck.com/assets.00/netlify-icon-512x512-p4tqk3ec.png" alt="Netlify">
+    </a>
+  </li>
+  <li class="clients-item">
+    <a href="#">
+      <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/272_Raspberry_Pi_logo-512.png" alt="Rasberry Pi">
+    </a>
+  </li>
+  <li class="clients-item">
+    <a href="#">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/512px-Visual_Studio_Code_1.35_icon.svg_20210804221519.png" alt="Visual Studio Code">
+    </a>
+  </li>
+</ul>
+
+ 
+
+<br>
+<br>
+  <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 article-title">What languages do I know?</h3>
+          <p class="blog-text">Learning multiple languages offers numerous advantages, including enhanced cognitive abilities, better problem-solving skills, and increased cultural awareness. It opens doors to global opportunities, allowing you to connect with diverse communities and access a wealth of knowledge in different fields.</p>
+  
+         
+          <ul class="service-list">
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="english.png" alt="English" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">English</h4>
+
+                <p class="service-item-text">
+                  English has essentially become my primary language. While I'm not a native speaker, my extensive experience with it has made me highly fluent—perhaps even more so than in my mother tongue, Bengali. I use English so often that it almost feels like my native language.
+                </p>
+              </div>
+
+            </li>
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="india.png" alt="Web development icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Hindi</h4>
+
+                <p class="service-item-text">
+                  I live in India, so Hindi is my second language. While it's required in school, India has advanced to a point where learning Hindi isn't always essential. Nonetheless, I speak Hindi fluently and can read and write it well.
+                </p>
+              </div>
+
+            </li>
+
+          
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="bangla.png" alt="mobile app icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Bengali</h4>
+
+                <p class="service-item-text">
+                  Bengali is my mother tongue, but surprisingly, I can only speak it and don't know how to read or write it. It's mainly a language used at home. I don't use Bengali much since I don't talk at home very often.
+                </p>
+              </div>
+            </li>
+           
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="german.png" alt="camera icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">German</h4>
+
+                <p class="service-item-text">
+                  German isn't my mother tongue or a third language for me; I'm learning it purely as a hobby. I'm working on reading and writing in German, but my progress is slow because of my heavy workload.
+                </p>
+              </div>
+
+            </li>
+
+          </ul>
+          <br>
+          <li class="service-item">
+
+            <div class="service-icon-box">
+              <img src="france.png" alt="camera icon" width="40">
+            </div>
+
+            <div class="service-content-box">
+              <h4 class="h4 service-item-title">French</h4>
+
+              <p class="service-item-text">
+                French was my third language in school for two years, but I didn't grasp it well. I barely passed the exams and am neither fluent nor skilled in reading or writing the language.
+              </p>
+            </div>
+
+          </li>
+          <br>
+          <li class="service-item">
+
+            <div class="service-icon-box">
+              <img src="sanskrit.png" alt="camera icon" width="40">
+            </div>
+
+            <div class="service-content-box">
+              <h4 class="h4 service-item-title">Sanskrit</h4>
+
+              <p class="service-item-text">
+                I studied Sanskrit as my third language for a year, but it wasn't a great experience. I barely passed the exams, and in 9th grade, I no longer have to study it, as I no longer have a third language requirement.
+              </p>
+            </div>
+
+          </li>
+          <br>
+          <li class="service-item">
+
+            <div class="service-icon-box">
+              <img src="karnataka.png" alt="camera icon" width="40">
+            </div>
+
+            <div class="service-content-box">
+              <h4 class="h4 service-item-title">Kannada</h4>
+
+              <p class="service-item-text">
+                I studied Kannada for three years, but I didn't devote much effort to it and barely passed the exams.
+              </p>
+            </div>
+
+          </li>
+
+        </section>
+
+
+        <br><br>
+        
+<section class="testimonials">
+
+  <h3 class="h3 testimonials-title">Devices</h3>
+  <p class="service-item-text">Allow me to introduce you to the devices I employ. These devices are always at my service; they are the core, the heart of my daily operations. They are my weapons in the digital world.</p>
+  <br><br>
+  <ul class="testimonials-list has-scrollbar">
+
+    <li class="testimonials-item">
+      <div class="content-card" data-testimonials-item="">
+
+        <figure class="testimonials-avatar-box">
+          <img src="monitor.gif" alt="Laptop" width="60" data-testimonials-avatar="">
+        </figure>
+
+        <h4 class="h4 testimonials-item-title" data-testimonials-title="">Desktop Computer</h4>
+       
+        <div class="testimonials-text" data-testimonials-text="">
+<p>
+<strong>A custom-built computer, which serves as my daily driver, operates with impeccable precision.</strong>
+
+</p>
+<br>
+<p>Processor: i5 3570 (4 Cores, 4 Threads)</p>
+<br>
+<p>Ram: 8GB DDR3 (1337 Mhz)</p>
+<br>
+<p>Storage: 256GB HikVision SATA SSD</p>
+<br>
+<p>Graphics card: (Integrated) Intel HD 2000 Graphics</p>
+<br>
+<p>Motherboard: Frontec H61</p>
+<br>
+<p>Power Supply: Generic 450 Watts</p>
+<br>
+<p>Case: Random old Zebronics case</p>
+<br>
+<p>Operating System: Windows 10</p>
+<br>
+<p>
+<strong>In essence, this computer lacks the premium specifications, yet it proficiently accomplishes its tasks.</strong></p>
+        </div>
+
+      </div>
+    </li>
+         
+    <li class="testimonials-item">
+      <div class="content-card" data-testimonials-item="">
+
+        <figure class="testimonials-avatar-box">
+          <img src="laptop.png" alt="Laptop" width="60" data-testimonials-avatar="">
+        </figure>
+
+        <h4 class="h4 testimonials-item-title" data-testimonials-title="">Laptop</h4>
+       
+        <div class="testimonials-text" data-testimonials-text="">
+<p>
+<strong>This is my former laptop, primarily utilized for work; I built a new PC due to its gradual decline in speed and usability.</strong>
+<br>
+</p><p>Laptop: Lenovo Z50-70</p>
+<p></p>
+<br>
+<p>Processor: i5 4210u (2 Cores, 2 Threads)</p>
+<br>
+<p>Ram: 8GB DDR3 (1600 Mhz)</p>
+<br>
+<p>Storage: 1TB 5400 RPM 2.5 INCH Samsung SATA HDD</p>
+<br>
+<p>Graphics card: Nvidia Geforce GT 820M</p>
+<br>
+<p>Operating System: Linux Mint Cinnamon Edition</p>
+<br>
+<p>
+<strong>This laptop has been under my faithful stewardship for eight years, during which I diligently administered incremental upgrades. However, its current state renders it impractical for use, hampered by a sluggish processor and the lethargic pace imposed by a traditional hard disk drive.</strong></p>
+        </div>
+
+      </div>
+    </li>
+    <li class="testimonials-item">
+      <div class="content-card" data-testimonials-item="">
+
+        <figure class="testimonials-avatar-box">
+          <img src="phone.png" width="60" data-testimonials-avatar="">
+        </figure>
+
+        <h4 class="h4 testimonials-item-title" data-testimonials-title="">Mobile Phone</h4>
+       
+        <div class="testimonials-text" data-testimonials-text="">
+          <p><strong>This is my present-day mobile device, faithfully accompanying me in my daily endeavors. While lacking in robustness and 5G capability, it admirably fulfills its purpose.</strong></p>
+          <br>
+          <p>Phone: Samsung Galaxy M32 4G</p>
+          <p></p>
+          <br>
+          <p>Chipset: Mediatek MT6769V/CU Helio G80 (12 nm)</p>
+          <br>
+          <p>CPU: Octa-core (2x2.0 GHz Cortex-A75 & 6x1.8 GHz Cortex-A55)</p>
+          <br>
+          <p>GPU: Mali-G52 MC2</p>
+          <br>
+          <p>Ram: 6GB</p>
+          <br>
+          <p>Storage: 128 GB (eMMC 5.1) 128 GB SanDisk SD Card</p>
+          <br>
+          <p>Display: Super AMOLED, 90 HZ, 6.4 inches, 800 Nits, 1080 x 2400 pixels, 20:9 ratio (~411 ppi density), (~83.9% screen-to-body ratio)</p>
+          <br>
+          
+          <p>Operating System: ONE UI 5.1, Android 13, Knox Security 3.9</p>
+          <br>
+          <p>
+          <strong>I acquired this phone following the demise of my previous device, the Samsung Galaxy J7. Despite its lack of 5G compatibility, it poses no inconvenience to me since I spend approximately 90% of my time within the confines of my home.</strong></p>
+        </div>
+
+      </div>
+    </li>
+    <li class="testimonials-item">
+      <div class="content-card" data-testimonials-item="">
+
+        <figure class="testimonials-avatar-box">
+          <img src="echo.png" width="60" data-testimonials-avatar="">
+        </figure>
+
+        <h4 class="h4 testimonials-item-title" data-testimonials-title="">Amazon Alexa</h4>
+       
+        <div class="testimonials-text" data-testimonials-text="">
+<p>
+<strong>This Amazon Alexa smart speaker is an integral part of my daily routine, serving as my go-to source for news updates, music playlists, and various other functionalities. It was a thoughtful birthday present. Its utility is undeniable, especially given its Echo Dot 3 designation.</strong>
+
+</p>
+<br>
+
+        </div>
+
+      </div>
+    </li>
+  </ul>
+  <br>
+
+
+  
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+
+   <!-- all css here -->
+<link href="fontawesome.min.css" rel="stylesheet" type="text/css">
+<link href="style.css" rel="stylesheet" type="text/css">
+
+
+     
+   
+
+
+
+<script src="../../web3forms.com/client/script.js" async="" defer=""></script>
+
+    </section></br<></article>
+
+      
+
+
+
+
+
+    
+
+
+
+
+
+      <!--
+        - #PORTFOLIO
+      -->
+
+      <article class="portfolio" data-page="portfolio">
+
+        <header>
+          <h2 class="h2 article-title">Websites</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list">
+
+            <li class="filter-item">
+              <button class="active" data-filter-btn="">All</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn="">Web design</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn="">Applications</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn="">Web development</button>
+            </li>
+
+          </ul>
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select="">
+
+              <div class="select-value" data-selecct-value="">Select category</div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+            <ul class="select-list">
+
+              <li class="select-item">
+                <button data-select-item="">All</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item="">Web design</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item="">Applications</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item="">Web development</button>
+              </li>
+
+            </ul>
+
+          </div>
+
+          <ul class="project-list">
+
+            <li class="project-item  active" data-filter-item="" data-category="web development">
+              <a href="https://shritishparram.netlify.app">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="shritishwebsite.png" alt="finance" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Shritish Parram's Portfolio</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item="" data-category="web development">
+              <a href="https://itsvinay.netlify.app">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="vinay.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Vinay Kumar's Portfolio Website</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+           
+            <li class="project-item  active" data-filter-item="" data-category="web development">
+              <a href="https://kasisatya.netlify.app/">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="kasi.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Kasi Satya's Portfolio Website</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+            <li class="project-item  active" data-filter-item="" data-category="web development">
+              <a href="https://notnishanth.netlify.app/">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="nishanth.png" alt="Nishanth" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Nishanth Chinthaginjala's Portfolio Website</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+            <li class="project-item  active" data-filter-item="" data-category="web development">
+              <a href="https://vintage-steve.github.io/">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  
+
+                  <img src="t7site.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">T7 / Melon N**** Portfolio</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item="" data-category="web design">
+              <a href="https://tuhinsarkar-xyz.github.io/to-do-app/">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="todo.png" alt="fundo" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">To-do Website (Under development)</h3>
+
+                <p class="project-category">Web design</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item="" data-category="applications">
+              <a href="https://tuhinsarkar-xyz.github.io/scientific-calculator/">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="calc.png" alt="brawlhalla" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Scientific Calculator</h3>
+
+                <p class="project-category">Applications</p>
+
+              </a>
+            </li>
+
+          
+
+    
+              
+            
+
+            
+         
+
+       
+
+          </ul>
+          </section>
+          <br>
+          <style>
+            .card-container {
+                display: flex; /* Use flexbox for layout */
+                justify-content: space-between; /* Optional: space between cards */
+            }
+            .card {
+                border: 1px solid #ccc; /* Add border for visibility */
+                padding: 20px; /* Add some padding */
+                margin: 10px; /* Add margin for spacing */
+                flex: 1; /* Allow cards to grow equally */
+            }
+        </style>
+    
+    
+      <header>
+        <h2 class="h2 article-title">Small-Scale Projects</h2>
+      </header>
+      <h5 class="h5 clients-title">These are projects I created with the goal of making them easily scalable for wider adoption.</h5>
+    <br>
+      <div class="card-container">
+        <div class="card">
+          <a href="https://iysjournal.netlify.app" target="_blank" style="color:#f8d66e;">
+            <h1>International Youth Science Journal</h1>
+            
+            <p>The International Youth Science Journal is a non-profit organisation that allows anyone under the age of 20 to publish their scientific work or research papers for free. It is completely run for free and via volunteers.</p>
+          </a>
+          </div>
+        
+      
+        <div class="card">
+          <a href="https://nsocial.netlify.app" target="_blank" style="color:#f8d66e;">
+            <h1>NSocial + NLeaks</h1>
+          
+            <p>NSocial is a platform that allows students of the Narayana Group of Institutions to find each other through a database they sign up for. NLeaks is a website where students from Narayana and some other school can voluntarily upload last year question papers, case study question and study materials to help other students in the future.</p>
+          </a>
+        </div>
+    </div>
+          <br>
+          <header>
+            <h2 class="h2 article-title">Older versions of my website</h2>
+          </header>
+          <h5 class="h5 clients-title">Are you experiencing any bugs? Do you want to roll back to a previous version of my website, or are you just interested in viewing an earlier version?</h5>
+        <br>
+          <section class="projects">
+  
+
+  
+      
+  
+            <ul class="project-list">
+  
+              <li class="project-item  active" data-filter-item="" data-category="web development">
+                <a href="https://web.archive.org/web/20240807132338/https://tuhinsarkar.netlify.app/">
+  
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+  
+                    <img src="v3.png" alt="finance" loading="lazy">
+                  </figure>
+  
+                  <h3 class="project-title">Portfolio (V3)</h3>
+  
+                  <p class="project-category">Version 3</p>
+  
+                </a>
+              </li>
+  
+              <li class="project-item  active" data-filter-item="" data-category="web development">
+                <a href="https://web.archive.org/web/20240513101254/https://tuhinsarkar-xyz.github.io/">
+  
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+  
+                    <img src="v2.png" alt="orizon" loading="lazy">
+                  </figure>
+  
+                  <h3 class="project-title">Portfolio (V2)</h3>
+  
+                  <p class="project-category">Version 2</p>
+  
+                </a>
+              </li>
+             
+              <li class="project-item  active" data-filter-item="" data-category="web development">
+                <a href="https://web.archive.org/web/20240807132338/https://web.archive.org/web/20240428070340/https://tuhin-sarkar-it.github.io/tuhin-portfolio.github.io/">
+  
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+  
+                    <img src="v1.png" alt="orizon" loading="lazy">
+                  </figure>
+  
+                  <h3 class="project-title">Portfolio (V1)</h3>
+  
+                  <p class="project-category">Version 1</p>
+  
+                </a>
+              </li>
+
+  
+   </ul>
+   </section>
+        
+        
+<br><br>
+          <br>
+          <header>
+            <h2 class="h2 article-title">Presentations</h2>
+          </header>
+  
+          <section class="projects">
+  
+            
+  
+            <ul class="project-list">
+              <li class="project-item  active" data-filter-item="" data-category="web development">
+                <a href="https://1drv.ms/p/c/42250d1dbefa3d87/EbY0HYQOkQdOjaQEIEWvwIMBWY6bTAgMLQOxi3JCwCP8rw?e=CsM698" target="_blank">
+  
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+  
+                    <img src="sdg2.png" alt="finance" loading="lazy">
+                  </figure>
+  
+                  </a><h3 class="project-title"><a href="https://1drv.ms/p/c/42250d1dbefa3d87/EbY0HYQOkQdOjaQEIEWvwIMBWY6bTAgMLQOxi3JCwCP8rw?e=CsM698" target="_blank"></a><a href="https://1drv.ms/p/c/42250d1dbefa3d87/EbY0HYQOkQdOjaQEIEWvwIMBWY6bTAgMLQOxi3JCwCP8rw?e=CsM698" style="color:#f8d66e;">(SDG) Sustainable Development Goals (Round 2)</a></h3><a href="https://1drv.ms/p/c/42250d1dbefa3d87/EbY0HYQOkQdOjaQEIEWvwIMBWY6bTAgMLQOxi3JCwCP8rw?e=CsM698" target="_blank" style="color:#f8d66e;">
+  
+  
+                </a>
+              </li>
+              <li class="project-item  active" data-filter-item="" data-category="web development">
+                <a href="https://1drv.ms/p/c/42250d1dbefa3d87/EdnSOssXOA1MmgR1W9AklEYBfe14tAlMclarx6QBW8kUEQ?e=HOZgj8" target="_blank">
+  
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+  
+                    <img src="sdg.png" alt="finance" loading="lazy">
+                  </figure>
+  
+                  </a><h3 class="project-title"><a href="https://1drv.ms/p/c/42250d1dbefa3d87/EdnSOssXOA1MmgR1W9AklEYBfe14tAlMclarx6QBW8kUEQ?e=HOZgj8" target="_blank"></a><a href="https://1drv.ms/p/c/42250d1dbefa3d87/EdnSOssXOA1MmgR1W9AklEYBfe14tAlMclarx6QBW8kUEQ?e=HOZgj8" target="_blank" style="color:#f8d66e;">(SDG) Sustainable Development Goals (Round 1)</a></h3><a href="https://1drv.ms/p/c/42250d1dbefa3d87/EdnSOssXOA1MmgR1W9AklEYBfe14tAlMclarx6QBW8kUEQ?e=HOZgj8" style="color:#f8d66e;">
+  
+  
+                </a>
+              </li>
+  
+ 
+  
+            </ul>
+            </section>
+            <br>
+         
+          <br>
+        
+          <header>
+            <h2 class="h2 article-title">Research Papers</h2>
+          </header>
+          <li class="blog-post-item">
+            <a href="https://iysjournal.netlify.app/Research%20Papers/Computer%20Science/Deepfakes%20and%20(A.I)%20Artificial%20Intelligence%20-%20%20How%20to%20prevent%20(A.I)%20Artifical%20Intelligence%20Deepfake%20Scams.pdf">
+  
+  
+  
+              <div class="blog-content">
+  
+                <div class="blog-meta">
+                  <p class="blog-category">Published in International Youth Science Journal</p>
+  
+                  <span class="dot"></span>
+  
+                  <time datetime="02-06-2024">02-06-2024</time>
+                </div>
+  
+                <h3 class="h3 blog-item-title">Deepfakes and (A.I) Artificial Intelligence: How to prevent (A.I)
+                  Artifical Intelligence Deepfake Scams</h3>
+                  <p class="blog-text">
+                    This research paper discusses the accuracy of reverse engineering algorithms in detecting deepfaked content.   
+                    <br>
+                    
+              
+                  <br> The advent of deepfake technology, which uses artificial intelligence to create hyper-realistic and
+                  fabricated video and audio, has introduced significant challenges for social media platforms and their users.
+                  This paper explores the harms of deepfakes, including the erosion of trust in digital media, the potential for
+                  political manipulation, the facilitation of cyberbullying, and the threat to personal privacy. This study further
+                  examines possible solutions that include limiting access to artificial intelligence, furthermore, the urgency for
+                  effective countermeasures. To mitigate these threats, the paper discusses a comprehensive approach involving
+                  technological solutions, policy interventions, law enforcement, and public education. Specifically, the
+                  advancement in detection algorithms, robust regulatory frameworks, and increased digital literacy among users
+                  are put forward as essential strategies to combat the proliferation of deepfakes on social media.
+                  
+                </p>
+  
+              </div>
+  
+            </a>
+          </li>
+     
+
+   <div class="widget-container">
+    <div class="youtube-widget">
+        <a href="https://www.youtube.com/channel/UCXXXXXXXXX" target="_blank" class="widget-link">
+            <div class="profile-container">
+                <img src="profile-picture-url-1.jpg" alt="Profile Picture" class="profile-picture">
+                <div class="text-container">
+                    <h2 class="channel-name">Channel Name 1</h2>
+                    <p class="subscriber-count">Subscribers: 1,234,567</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="youtube-widget">
+      <a href="https://www.youtube.com/channel/UCXXXXXXXXX" target="_blank" class="widget-link">
+          <div class="profile-container">
+              <img src="profile-picture-url-1.jpg" alt="Profile Picture" class="profile-picture">
+              <div class="text-container">
+                  <h2 class="channel-name">Channel Name 1</h2>
+                  <p class="subscriber-count">Subscribers: 1,234,567</p>
+              </div>
+          </div>
+      </a>
+  </div>
+    <div class="youtube-widget">
+        <a href="https://www.youtube.com/channel/UCXXXXXXXXX" target="_blank" class="widget-link">
+            <div class="profile-container">
+                <img src="profile-picture-url-2.jpg" alt="Profile Picture" class="profile-picture">
+                <div class="text-container">
+                    <h2 class="channel-name">Channel Name 2</h2>
+                    <p class="subscriber-count">Subscribers: 2,345,678</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+        <section class="testimonials">
+
+            <br>
+            <section class="clients">
+              <h2 class="h2 article-title">Typing speed</h2>
+              <h5 class="h5 clients-title">I type at 118 WPM at the age of 14.</h5>
+                  
+              
+            <ul class="testimonials-list has-scrollbar"><a href="https://discord.gg/GXMECd2guv">
+                          
+              </a><li class="testimonials-item"><a href="https://discord.gg/GXMECd2guv">
+                </a><div class="content-card" data-testimonials-item=""><a href="https://discord.gg/GXMECd2guv">
+            
+                 
+                    </a><a href="https://monkeytype.com">
+            
+                      <figure class="project-img">
+                        <div class="project-item-icon-box">
+                          <ion-icon name="eye-outline"></ion-icon>
+                        </div>
+            
+                     <img src="wpm.png">
+                      </figure>
+            
+                      <h3 class="project-title">Results on 10/08/2024 on Monkeytype</h3>
+                      <p class="blog-text">
+                        I started practicing typing when I was just 10 years old. Back then, I was fascinated by how quickly I could translate my thoughts into text on a screen. At that age, my typing speed was 50 words per minute (wpm), which felt like a big accomplishment. I was determined to improve, so I kept practicing every day. By the time I turned 11, my speed had increased to 80 wpm. The following year, at 12, I hit 90 wpm. At 13, I reached 100 wpm, and now, at 14, I can type at an impressive speed of 118 wpm. This journey has taught me that with consistent effort and a passion for improvement, you can achieve remarkable progress.
+                        
+                      </p>
+            
+                     
+            
+                    </a>
+                 
+                  </div></li></ul>
+                  
+            
+            
+            </section>
+            
+            <br>
+            <section class="clients">
+              <h2 class="h2 article-title">Building stuff!</h2>
+              <h5 class="h5 clients-title">I love building stuff, I practice Robotics as well... Being a tech nerd / prodigy without Robotics? Certainly not (in my opinion)</h5>
+                  
+            
+            
+            </section>
+            <ul class="testimonials-list has-scrollbar">
+            
+              <li class="testimonials-item">
+                <div class="content-card" data-testimonials-item="">
+            
+                 
+                    <a href="https://www.youtube.com/shorts/DAKkMaH1MOg">
+            
+                      <figure class="project-img">
+                        <div class="project-item-icon-box">
+                          <ion-icon name="eye-outline"></ion-icon>
+                        </div>
+            
+                        <video width="512" height="288" autoplay="" muted="" loop="" id="myVideo">
+                          <source src="DIY%20Simple%20Driving%20Simulator.mp4" type="video/mp4">
+                        </video>
+                      </figure>
+            
+                      <h3 class="project-title">(DIY) Driving Simulator</h3>
+                      <p class="blog-text">
+                        I'm excited to announce the first successful test of my DIY driving simulator. Launched in August 2023, this simulator lets me experience real-life driving scenarios with remarkable precision, all without breaking the bank. It's both affordable and effective—so much so that it's one of the most functional steering wheel models you can create at this price point.
+                      </p>
+            </a>
+            
+                     
+            
+            </div>
+            </li><li class="testimonials-item">
+              <div class="content-card" data-testimonials-item="">
+            
+               
+                  <a href="VMUN Final brochure.pdf">
+            
+                    <figure class="project-img">
+                      <div class="project-item-icon-box">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </div>
+            
+                  <img src="pc.jpg">
+                    </figure>
+            
+                    <h3 class="project-title">PC Build</h3>
+                    <p class="blog-text">
+                    At the age of 13, I sucessfully build my first PC from scratch, buying parts online seperately and assembling it. The first sucessful test was conducted on 11th April, 2024. This is a powerhouse with an Intel Core i5 3570, 8GB of DDR3 Ram, and 1TB of Hard Disk space, atleast enough to get my work done...
+                     </p>
+            
+                   
+            </a>
+            </div>
+                    
+                 
+                  </li></ul>
+            
+            
+            <br>
+            <div>
+            <h2 class="h2 article-title">Participation in Competitions</h2>
+            
+            </div>
+            
+            <ul class="testimonials-list has-scrollbar">
+                          
+              <li class="testimonials-item">
+                <div class="content-card" data-testimonials-item="">
+            
+                 
+                    <a href="https://nerdnarratives.blogspot.com/2024/08/my-sdg-presentation-journey-triumphs.html">
+            
+                      <figure class="project-img">
+                        <div class="project-item-icon-box">
+                          <ion-icon name="eye-outline"></ion-icon>
+                        </div>
+            
+                       <img src="WhatsApp%20Image%202024-08-06%20at%2013.17.06_fd899254.jpg">
+                      </figure>
+               
+            
+                      <h3 class="project-title">Sustainable Development Goal (SDG)</h3>
+                       
+                      <p class="blog-text">
+                        On Saturday, August 3rd, 2024, our school conducted a presentation where we were tasked with discussing the Sustainable Development Goals (SDGs). It was an exciting opportunity to delve into these global objectives and present our understanding and ideas. Our presentation went well, and we were thrilled to be selected for the final round. After days of preparation and fine-tuning our content, we gave our final round audition on August 10th, 2024. The entire experience was both challenging and rewarding, and it reinforced the importance of sustainability in our world today.
+                        
+                      </p>
+            
+                     
+            
+
+                    </a>
+                 
+                  </div></li></ul>
+                  
+            
+            
+            
+            <ul class="testimonials-list has-scrollbar">
+            
+              <li class="testimonials-item">
+                <div class="content-card" data-testimonials-item="">
+            
+                 
+                    <a href="https://cryptics.in/">
+            
+                      <figure class="project-img">
+                        <div class="project-item-icon-box">
+                          <ion-icon name="eye-outline"></ion-icon>
+                        </div>
+            
+                        <video width="512" height="288" autoplay="" muted="" loop="" id="myVideo">
+                          <source src="cryptics70.mp4" type="video/mp4">
+                        </video>
+                      </figure>
+            
+                      <h3 class="project-title">Cryptics 7.0 - Vydehi</h3>
+                      <p class="blog-text">
+                       I'm thrilled to announce that I've been selected to represent my school at the upcoming Cryptics 7.0 competition in 2024! Cryptics 7.0 is an exhilarating computer quiz hosted at Vydehi School of Excellence, where participants from across Bengaluru come together to test their knowledge in data, algorithms, and cybersecurity. This event is more than just a competition—it's an educational journey that delves deep into the digital universe, uncovering the secrets of programming languages, data security, and the ever-evolving world of technology. I'm excited to be part of this incredible experience, where I'll have the opportunity to challenge my skills, crack codes, and explore the mysteries that shape our digital lives. Stay tuned for updates on my journey!
+                      </p>
+            </a>
+            
+                     
+            
+            </div>
+            </li><li class="testimonials-item">
+              <div class="content-card" data-testimonials-item="">
+            
+               
+                  <a href="VMUN Final brochure.pdf">
+            
+                    <figure class="project-img">
+                      <div class="project-item-icon-box">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </div>
+            
+                      <video width="512" height="288" autoplay="" muted="" loop="" id="myVideo">
+                        <source src="brochurelink.mp4" type="video/mp4">
+                      </video>
+                    </figure>
+            
+                    <h3 class="project-title">Model United Nation (MUN) - Vydehi</h3>
+                    <p class="blog-text">
+                      I'm thrilled to share that I've been selected to represent my school at the Vydehi Model United Nations (VMUN) 2024, happening on August 30-31 in Bengaluru. This exciting event brings students together to tackle global issues through diplomatic simulations. With six diverse committees addressing critical world problems, I'm looking forward to engaging in meaningful debates, developing innovative solutions, and enhancing my skills in diplomacy. It's a great opportunity to contribute to discussions that could shape our future!
+                     </p>
+            
+                   
+            </a>
+            </div>
+                    
+                 
+                  </li></ul>
+            <br><br>
+                              
+                              <section class="testimonials">
+            
+                               
+                      
+                             
+                                        
+                                      
+                      
+                                           
+                    </section>
+                 
+
+
+
+
+         <!--
+        - #BLOG
+      -->
+
+                    
+      <article class="home  active" data-page="home">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+        <section class="clients">
+
+
+
+  
+
+</section>
+        <section class="blog-posts">
+          
+
+          <ul class="blog-posts-list">
+      
+
+   
+       
+        
+  
+  
+           
+              <li class="blog-post-item">
+                <a href="https://nerdnarratives.blogspot.com/2024/08/my-sdg-presentation-journey-triumphs.html">
+  
+             
+  
+                  <div class="blog-content">
+  
+                    <div class="blog-meta">
+                      <p class="blog-category">SDG Competition</p>
+  
+                      <span class="dot"></span>
+  
+                      <time datetime="2022-02-23">August 13, 2024</time>
+                    </div>
+  
+                    <h3 class="h3 blog-item-title">My SDG Presentation Journey: Triumphs, Trials, and Teamwork - Our Victory at the SDG Presentation Competition</h3>
+  
+                    <p class="blog-text">
+                      On the 3rd of August 2024, the excitement in the air was palpable as the first round of our school's SDG (Sustainable Development Goals) presentation competition kicked off. It was a crucial event for me, not just because of the prestige it carried, but because it aligned perfectly with my belief in the power of science and reason. Unlike others who were praying fervently for a win, I held firmly to my faith in hard work, preparation, and the principles of science.
+                    </p>
+  
+                  </div>
+  
+                </a>
+              </li>
+              <li class="blog-post-item">
+                <a href="https://nerdnarratives.blogspot.com/2024/05/the-deceptive-counselor-story-of.html">
+  
+                  <figure class="blog-banner-box">
+                    <img src="badtherapist.png" alt="The Deceptive Counselor: A Story of Therapeutic Misconduct" loading="lazy">
+                  </figure>
+  
+                  <div class="blog-content">
+  
+                    <div class="blog-meta">
+                      <p class="blog-category">Counselling</p>
+  
+                      <span class="dot"></span>
+  
+                      <time datetime="2022-02-23">May 13, 2024</time>
+                    </div>
+  
+                    <h3 class="h3 blog-item-title">The Deceptive Counselor: A Story of Therapeutic Misconduct</h3>
+  
+                    <p class="blog-text">
+                      What if your therapist was your enemy? What if it feels like the therapist is doing their job, but it’s your fault that you can’t heal from the therapy? What if you feel unworthy of being in therapy? Is it your fault? Is it your therapist’s fault? It possibly can’t be your therapist’s fault, right? After all, they are the ones trying to heal you... It must be you, the weirdo who can’t heal. But that’s not always the case...
+                    </p>
+  
+                  </div>
+  
+                </a>
+              </li>
+              <li class="blog-post-item">
+                <a href="https://nerdnarratives.blogspot.com/2024/05/the-dark-side-of-anonymity-tech.html">
+  
+                  <figure class="blog-banner-box">
+                    <img src="prodigy.webp" alt="The Dark Side of Anonymity: A Tech Prodigy's Path to Regret " loading="lazy">
+                  </figure>
+  
+                  <div class="blog-content">
+  
+                    <div class="blog-meta">
+                      <p class="blog-category">Computer Science</p>
+  
+                      <span class="dot"></span>
+  
+                      <time datetime="2022-02-23">May 13, 2024</time>
+                    </div>
+  
+                    <h3 class="h3 blog-item-title"> The Dark Side of Anonymity: A Tech Prodigy's Path to Regret </h3>
+  
+                    <p class="blog-text">
+                      My elementary school life is unlike any other’s. I was a gifted child… While others were drawing, I was hacking into systems. While others were dancing, I was learning how to code. I think the internet changed my life… It made me a different person. 
+                    </p>
+  
+                  </div>
+  
+                </a>
+              </li>
+        
+         </ul></section>
+         <p class="blog-text">To read more, visit: </p><a href="https://nerdnarratives.blogspot.com" class="contact-link" style="color:#f8d66e;">https://nerdnarratives.blogspot.com</a>
+         <br>
+         <hr>
+         <br>
+       
+	   
+          <h2 class="h2 article-title">Essays</h2>
+        
+
+        <li class="blog-post-item">
+          <a href="https://nerdnarratives.blogspot.com/2024/05/the-rise-of-thinkpads-internets-go-to.html">
+
+            <figure class="blog-banner-box">
+              <img src="thinkpad.png" alt="The ThinkPad Phenomenon: Internet's Preferred Laptop" loading="lazy">
+            </figure>
+
+            <div class="blog-content">
+
+              <div class="blog-meta">
+                <p class="blog-category">Computers and Laptops</p>
+
+                <span class="dot"></span>
+
+                <time datetime="2022-02-23">May 17, 2024</time>
+              </div>
+
+              <h3 class="h3 blog-item-title">The ThinkPad Phenomenon: Internet's Preferred Laptop</h3>
+
+              <p class="blog-text">
+                All of us have seen a laptop and even used one at one point or another... We buy laptops as they are portable and can be taken anywhere. Laptops are meant to be tools and devices used for work and play. 
+
+What if I told you, there was one laptop that's beyond a tool and is beyond a device... It's an internet sensation. Yes, I'm talking about the ThinkPads.
+              </p>
+            </div>
+
+          </a>
+        </li>
+        
+            <li class="blog-post-item">
+              <a href="https://nerdnarratives.blogspot.com/2024/05/the-rise-of-chromium-friend-or-foe.html">
+
+                <figure class="blog-banner-box">
+                  <img src="chrome.webp" alt=" The Rise of Chromium: Friend or Foe? " loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Web Browsers</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">May 13, 2024</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title"> The Rise of Chromium: Friend or Foe? </h3>
+
+                  <p class="blog-text">
+                    Google now owns the internet… What do I mean? Let me tell you…
+
+Google Chrome is the most widely used web browser with a 64% market share, which means a lot of how people experience the web is largely controlled by Google. Since, if you make the web browser itself, you have full control over how people view the web.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="https://nerdnarratives.blogspot.com/2024/05/windows-11-upgrade-or-wait-heres-what.html">
+
+                <figure class="blog-banner-box">
+                  <img src="win11.webp" alt=" Windows 11: Upgrade or Wait? Here's What to Consider" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Operating System</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">May 13, 2024</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title"> Windows 11: Upgrade or Wait? Here's What to Consider</h3>
+
+                  <p class="blog-text">
+                    Windows 11 was released on the 5th of October 2021, and ever since then, Microsoft has been slowly and slowly forcing its users onto it. Not to mention these popups all over the operating system. What factors might be causing 70% of Windows users to wait on upgrading to Windows 11?
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+            
+            <li class="blog-post-item">
+              <a href="https://nerdnarratives.blogspot.com/2024/05/building-your-digital-defenses.html">
+
+                <figure class="blog-banner-box">
+                  <img src="main.webp" alt="Building Your Digital Defenses, Demystifying Cyber Threats and Protecting Yourself in the Digital World. (A.I Generated using Google Gemini)
+                  " loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Cybersecurity</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">May 13, 2024</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Building Your Digital Defenses, Demystifying Cyber Threats and Protecting Yourself in the Digital World. (A.I Generated using Google Gemini)
+                  </h3>
+
+                  <p class="blog-text">
+                    Disclaimer: This blog is completely A.I generated, I have used the free tier of Google's Gemini to generate this. If you notice anything wrong, please comment down below and let me know.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+    
+          
+           <br>
+                       
+          <br>
+          <a href="https://nerdnarratives.blogspot.com/" <h3="" class="h3 form-title"></a>
+          
+          <section class="testimonials">
+            <br>
+                        <h2 class="h2 article-title">Video Documentaries</h2>
+              
+                        <ul class="testimonials-list has-scrollbar">
+              
+                          <li class="testimonials-item">
+                            <div class="content-card" data-testimonials-item="">
+              
+                             
+                            
+                  
+                                    <iframe width="512" height="288" src="https://www.youtube.com/embed/Y3g3CNXTjpA?si=dr0ByriDy4WenWWt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+                                  
+                  
+                                  
+                  
+                                 
+                  
+                                
+                             
+                              </div></li></ul>
+                           
+            
+                               
+                      
+                              <ul class="testimonials-list has-scrollbar">
+              
+                                <li class="testimonials-item">
+                                  <div class="content-card" data-testimonials-item="">
+                    
+                                   
+                                  
+                        
+                                          <iframe width="512" height="288" src="https://www.youtube.com/embed/3ttLayFicwk?si=M2nT6kYiLBC8JSyL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+                                        
+                        
+                                        
+                        
+                                       
+                        
+                                      
+                                   
+                                    </div></li></ul>
+                                    <ul class="testimonials-list has-scrollbar">
+              
+                                      <li class="testimonials-item">
+                                        <div class="content-card" data-testimonials-item="">
+                          
+                                         
+                                        
+                              
+                                                <iframe width="512" height="288" src="https://www.youtube.com/embed/yIZWEMWC2Rc?si=v8FhlG_m3swQIT22" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+                                              
+                              
+                                              
+                              
+                                             
+                              
+                                            
+                                         
+                                          </div></li></ul>
+                      
+                                              
+                                      
+                                      </section>
+                                      <section class="testimonials">
+                                        <br>
+                                                    <h2 class="h2 article-title">Typing Videos</h2>
+                                          
+                                                    <ul class="testimonials-list has-scrollbar">
+                                          
+                                                      <li class="testimonials-item">
+                                                        <div class="content-card" data-testimonials-item="">
+                                                          <iframe width="512" height="288" src="https://www.youtube.com/embed/Y9bCGfiNouY?si=A4ircaYiXGhCfPTM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+                                                          <br>
+                                                          </div>
+                                                          </li>
+                                                          </ul>
+                                                            
+                                                
+                                                          
+                                                          </section>
+          <section class="testimonials">
+            <br>
+            <h2 class="h2 article-title">Short Films</h2>
+    
+            <ul class="testimonials-list has-scrollbar">
+    
+              <li class="testimonials-item">
+                <div class="content-card" data-testimonials-item="">
+  
+      
+                        <iframe width="512" height="288" src="https://www.youtube.com/embed/WuRAFFADAOk?si=wQiVuUQAs-zMMI7d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+                      
+      
+                   
+      
+                     
+      
+                    
+                 
+                  </div></li></ul>
+                  <section class="testimonials">
+
+                   
+                    <ul class="testimonials-list has-scrollbar">
+    
+                      <li class="testimonials-item">
+                        <div class="content-card" data-testimonials-item="">
+          
+              
+                                <iframe width="512" height="288" src="https://www.youtube.com/embed/TQBI6_fIr24?si=0s_uYWo5REdUOtQN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+                              
+              
+                           
+              
+                              
+              
+                            
+                          </div></li>
+          
+                          
+        </ul></section>
+        <section class="testimonials">
+          <br>
+                      <h2 class="h2 article-title">YouTube Videos</h2>
+            
+                      <ul class="testimonials-list has-scrollbar">
+            
+                        <li class="testimonials-item">
+                          <div class="content-card" data-testimonials-item="">
+                            <iframe width="512" height="288" src="https://www.youtube.com/embed/otZ3pGLYx5w?si=Xo5yvGSjus367uPh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+                            <br>
+                            </div>
+                            </li>
+                            </ul>
+                              
+                      <ul class="testimonials-list has-scrollbar">
+            
+                        <li class="testimonials-item">
+                          <div class="content-card" data-testimonials-item="">
+                            <iframe width="512" height="288" src="https://www.youtube.com/embed/Y3g3CNXTjpA?si=3SVIn-jDGa5hsghy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+                            <br>
+                            </div>
+                            </li>
+                            </ul>
+                            
+                            </section>
+
+                            <section class="testimonials">
+                              <br>
+                                          <h2 class="h2 article-title">Gaming Videos</h2>
+                                
+                                          <ul class="testimonials-list has-scrollbar">
+                                
+                                            <li class="testimonials-item">
+                                              <div class="content-card" data-testimonials-item="">
+                                                <iframe width="512" height="288" src="https://www.youtube.com/embed/6NSC5eTxpYE?si=TuTAbj15FYlMIjmm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+                                                <br>
+                                                </div>
+                                                </li>
+                                                </ul>
+                                                  
+                                          <ul class="testimonials-list has-scrollbar">
+                                
+                                            <li class="testimonials-item">
+                                              <div class="content-card" data-testimonials-item="">
+                                                <iframe width="512" height="288" src="https://www.youtube.com/embed/Q-tdWHiy4gw?si=fcMe0hhwRn86obBr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+                                                <br>
+                                                </div>
+                                                </li>
+                                                </ul>
+                                                
+                                                </section>
+</section>
+
+
+
+         
+           <br>
+   
+         
+           
+           <br><br>
+<section class="testimonials">
+
+  <h3 class="h3 testimonials-title">Books</h3>
+  <p class="service-item-text">In the world of self-improvement, your wisdom grows, nurtured by self-help books and many stories. Through reading, you've found your inner light, and with each word, you rise to greater heights.</p>
+  <br><br>
+  <ul class="testimonials-list has-scrollbar">
+
+    <li class="testimonials-item">
+      <div class="content-card" data-testimonials-item="">
+
+        <figure class="testimonials-avatar-box">
+          <img src="../m.media-amazon.com/images/I/71dKL5THnGL._AC_UF1000%2C1000_QL80_.jpg" alt="Laptop" width="60" data-testimonials-avatar="">
+        </figure>
+
+        <h4 class="h4 testimonials-item-title" data-testimonials-title="">Psycho Cybernetics</h4>
+       
+        <div class="testimonials-text" data-testimonials-text="">
+
+<br>
+
+        </div>
+
+      </div>
+    </li>
+         
+    <li class="testimonials-item">
+      <div class="content-card" data-testimonials-item="">
+
+        <figure class="testimonials-avatar-box">
+          <img src="../m.media-amazon.com/images/I/61J3Uu4jOLL._AC_UF1000%2C1000_QL80_.jpg" alt="Laptop" width="60" data-testimonials-avatar="">
+        </figure>
+
+        <h4 class="h4 testimonials-item-title" data-testimonials-title="">The 48 Laws of Power</h4>
+       
+        <div class="testimonials-text" data-testimonials-text="">
+
+        </div>
+
+      </div>
+    </li>
+    <li class="testimonials-item">
+      <div class="content-card" data-testimonials-item="">
+
+        <figure class="testimonials-avatar-box">
+          <img src="../m.media-amazon.com/images/I/81VAEnfqo4L._AC_UF350%2C350_QL50_.jpg" width="60" data-testimonials-avatar="">
+        </figure>
+
+        <h4 class="h4 testimonials-item-title" data-testimonials-title="">Startup Compass</h4>
+       
+        <div class="testimonials-text" data-testimonials-text="">
+        
+        </div>
+
+      </div>
+    </li>
+    <li class="testimonials-item">
+      <div class="content-card" data-testimonials-item="">
+
+        <figure class="testimonials-avatar-box">
+          <img src="../m.media-amazon.com/images/I/41WmF6NBhML._AC_UF1000%2C1000_QL80_.jpg" width="60" data-testimonials-avatar="">
+        </figure>
+
+        <h4 class="h4 testimonials-item-title" data-testimonials-title="">Manifest The Life You Desire</h4>
+       
+        <div class="testimonials-text" data-testimonials-text="">
+
+</div></div></li><li class="testimonials-item">
+  <div class="content-card" data-testimonials-item="">
+
+    <figure class="testimonials-avatar-box">
+      <img src="../m.media-amazon.com/images/I/81zz6LqCreS._AC_UF1000%2C1000_QL80_.jpg" width="60" data-testimonials-avatar="">
+    </figure>
+
+    <h4 class="h4 testimonials-item-title" data-testimonials-title="">How To Stop Worrying And Start Living</h4>
+   
+    <div class="testimonials-text" data-testimonials-text="">
+
+</div></div></li><li class="testimonials-item">
+  <div class="content-card" data-testimonials-item="">
+
+    <figure class="testimonials-avatar-box">
+      <img src="../mybooksfactory.com/wp-content/uploads/2023/01/1-276-2.webp" width="60" data-testimonials-avatar="">
+    </figure>
+
+    <h4 class="h4 testimonials-item-title" data-testimonials-title="">The Power Of Influence</h4>
+   
+    <div class="testimonials-text" data-testimonials-text="">
+
+</div></div></li><li class="testimonials-item">
+  <div class="content-card" data-testimonials-item="">
+
+    <figure class="testimonials-avatar-box">
+      <img src="../www.srishtipublishers.com/wp-content/uploads/2023/10/Pursuit-of-Excellence-001.jpg" width="60" data-testimonials-avatar="">
+    </figure>
+
+    <h4 class="h4 testimonials-item-title" data-testimonials-title="">Pursuit of Excellence</h4>
+   
+    <div class="testimonials-text" data-testimonials-text="">
+
+
+
+</div></div></li><li class="testimonials-item">
+  <div class="content-card" data-testimonials-item="">
+
+    <figure class="testimonials-avatar-box">
+      <img src="../m.media-amazon.com/images/I/61sph7%2Ba8PL._AC_UF1000%2C1000_QL80_.jpg" width="60" data-testimonials-avatar="">
+    </figure>
+
+    <h4 class="h4 testimonials-item-title" data-testimonials-title="">How to Use Your Healing Power</h4>
+   
+    <div class="testimonials-text" data-testimonials-text="">
+
+</div></div></li><li class="testimonials-item">
+  <div class="content-card" data-testimonials-item="">
+
+    <figure class="testimonials-avatar-box">
+      <img src="../m.media-amazon.com/images/I/61K4W%2BF-VLL._AC_UF350%2C350_QL50_.jpg" width="60" data-testimonials-avatar="">
+    </figure>
+
+    <h4 class="h4 testimonials-item-title" data-testimonials-title="">The Ultimate Guide to Succes</h4>
+   
+    <div class="testimonials-text" data-testimonials-text="">
+
+</div></div></li><li class="testimonials-item">
+  <div class="content-card" data-testimonials-item="">
+
+    <figure class="testimonials-avatar-box">
+      <img src="../m.media-amazon.com/images/I/51YJRZyfkrL.jpg" width="60" data-testimonials-avatar="">
+    </figure>
+
+    <h4 class="h4 testimonials-item-title" data-testimonials-title="">Fright or Flight</h4>
+   
+    <div class="testimonials-text" data-testimonials-text="">
+
+</div></div></li><li class="testimonials-item">
+  <div class="content-card" data-testimonials-item="">
+
+    <figure class="testimonials-avatar-box">
+      <img src="../m.media-amazon.com/images/I/81wYMQoH8LL._AC_UF1000%2C1000_QL80_.jpg" width="60" data-testimonials-avatar="">
+    </figure>
+
+    <h4 class="h4 testimonials-item-title" data-testimonials-title="">The Secret Seven</h4>
+   
+    <div class="testimonials-text" data-testimonials-text="">
+
+
+<br>
+
+        </div>
+
+      </div>
+    </li>
+  </ul>
+  <br>
+            
+         
+            
+       
+         
+              <!-- all css here -->
+    <link href="fontawesome.min.css" rel="stylesheet" type="text/css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <div class="newsletter_wrap">
+      <div class="newsletter_item">
+          <div>
+              <h2>Subscribe to my newsletter!</h2>
+              <p>Subscribe to get exclusive updates on my latest tech experiments and personal advancements straight to your inbox.</p>
+              <br>
+              <p>Don't worry! I hate data breaches and spam, hence, the best cybersecurity solutions have been kept in place to protect me, you and your data...</p>
+          </div>
+          
+          <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="bb5610cd-67e1-478c-8599-dc0ece8f49be">
+            
+            <div class="h-captcha" data-captcha="true"></div>
+            <div class="input_box">
+              <input type="newsletter email" name="newsletter email" class="form-input" placeholder="Email address" required="" data-form-input="">
+              <button>Submit</button>
+              
+          </div>
+                
+              
+         
+
+  </form>
+  <script src="../web3forms.com/client/script.js" async="" defer=""></script>
+     
+<section class="contact-form">
+<!-- 
+    =======================================================================
+
+    This is a working contact form. To receive email, 
+    Replace YOUR_ACCESS_KEY_HERE with your actual Access Key.
+
+    Create Access Key here 👉 https://web3forms.com/
+
+    =======================================================================
+ -->
+
+ <!-- 
+    This is a working contact form. To receive email, 
+    Replace YOUR_ACCESS_KEY_HERE with your actual Access Key.
+
+    Create Access Key here 👉 https://web3forms.com/
+ -->
+
+  </section>
+</div>
+<br>
+
+<section class="clients">
+  <h2 class="h2 article-title">Activism</h2>
+  <h5 class="h5 clients-title">I believe that standing up against wrongs and injustice is crucial for the wellbeing of society. Addressing these issues fosters fairness and promotes a more just and equitable world.</h5>
+
+
+<ul class="testimonials-list has-scrollbar">
+              
+  <li class="testimonials-item">
+    <div class="content-card" data-testimonials-item="">
+
+     
+        <a href="https://freeross.org/">
+
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+
+         <img src="ross.jpeg">
+          </figure>
+
+          <h3 class="project-title">Free Ross Ulbricht!</h3>
+          <p class="blog-text"> Ross Ulbricht, the creator of Silk Road, was arrested for operating an online marketplace that facilitated the trade of illegal goods, including drugs. While his actions were illegal and serious, Ulbricht was driven by a belief in individual freedom and privacy, not malice.</p>
+          <p class="blog-text"><br></p>
+          <p class="blog-text">He received a life sentence without parole, a harsh punishment considering it was his first offence, especially when others involved received lighter sentences. Many argue that he was made an example of, rather than being judged fairly.</p>
+          <p class="blog-text"><br></p>
+          <p class="blog-text">Ross has shown deep remorse and has used his time in prison to reflect and grow. He deserves a second chance to contribute positively to society, reminding us that justice should also offer the possibility of redemption.</p>
+         <br>
+          </a><a href="https://www.change.org/p/clemency-for-ross-ulbricht-condemned-to-die-in-prison-for-an-e-commerce-website?hp" style="color:#f8d66e;">Sign the petition to free Ross Ulbricht from Prison!</a>
+
+         
+
+        
+     </div>
+     </li>
+     <li class="testimonials-item">
+      <div class="content-card" data-testimonials-item="">
+  
+       
+          <a href="https://freeross.org/">
+  
+            <figure class="project-img">
+              <div class="project-item-icon-box">
+                <ion-icon name="eye-outline"></ion-icon>
+              </div>
+  
+           <img src="../www.euroschoolindia.com/wp-content/uploads/2023/09/world-war-I.jpg">
+            </figure>
+  
+            <h3 class="project-title">Isreal or Palestine? Russia or Ukraine?</h3>
+<p class="blog-text">War, whether in Israel-Palestine or Russia-Ukraine, is a tragedy that brings immense suffering to countless individuals. It is deeply distressing to witness such conflict in the 21st century, a time when humanity should be advancing toward peace and unity. I unequivocally condemn all forms of war and violence. No one should be victorious in such disputes; the true victory lies in ending the conflict and alleviating the pain endured by innocent victims. We must strive for dialogue, understanding, and cooperation to resolve differences. The world deserves to move beyond the horrors of war and embrace a future of harmony and progress.</p>
+           <br>
+            </a><a href="https://www.change.org/p/clemency-for-ross-ulbricht-condemned-to-die-in-prison-for-an-e-commerce-website?hp" style="color:#f8d66e;">Sign the petition to free Ross Ulbricht from Prison!</a>
+  
+           
+  
+          
+       </div>
+       </li>
+      </ul>
+      <ul class="testimonials-list has-scrollbar">
+              
+        <li class="testimonials-item">
+          <div class="content-card" data-testimonials-item="">
+      
+           
+              <a href="https://freeross.org/">
+      
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+      
+               <img src="../media.cnn.com/api/v1/images/stellar/prod/220629080734-01-lgbtq-faq-misconceptions_c%3D16x9%26q%3Dh_833%2Cw_1480%2Cc_fill.jpg">
+                </figure>
+      
+                <h3 class="project-title">Addressing Misconceptions and Promoting Understanding Within the LGBTQ Community</h3>
+                <p class="blog-text">Its important to acknowledge that everyone deserves respect and dignity, regardless of their gender identity or beliefs. While Ive been criticized before for seeming anti-LGBTQ or transphobic, I want to clarify that I never intended to defame anyone in the LGBTQ or transgender community. In fact, I was once very close with a transgender person. However, Ive noticed some issues within the community that I think need addressing.</p>
+
+                <p class="blog-text">One major issue is the perception of the LGBTQ community as toxic, uncivilized, and close-minded. Some people within the community seem to fight for rights that they already possess, which can create a sense of stagnation. For example, transgender individuals face significant discrimination that can hinder their ability to focus on career advancement. This societal bias often prevents them from fully developing their skills and achieving their potential.</p>
+                
+                <p class="blog-text">Additionally, there are instances of intolerance within the LGBTQ community itself. For example, some members advocate for the idea that traditional gender categories should be abolished in favor of a multitude of gender identities. This can be seen as a form of close-mindedness, especially when it comes to respecting others' personal beliefs. The tendency to call out, cancel, or protest against people who dont conform to these views can contribute to a perception of intolerance and toxicity within the community.</p>
+                
+                <p class="blog-text">Its not that being transgender or LGBTQ is inherently problematicI have no issue with the existence of these identities. Rather, I believe that a more open-minded and respectful approach within the community could foster better coexistence. By embracing a mindset that respects differing beliefs and avoids aggressive tactics, the community could potentially improve relations with others and reduce the sense of division and conflict.</p>
+               <br>
+                
+      
+               
+      
+              </a>
+           </div>
+           </li>
+           </ul>
+
+
+</section>
+       
+<section class="contact-form">
+
+ 
+
+</section></div></section></article>
+
+</section>
+        
+
+
+
+
+
+
+      <!--
+        - #CONTACT
+      -->
+      <article class="contact  active" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact Me</h2>
+        </header>
+    
+        <section class="mapbox" data-mapbox="">
+          <figure>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497698.7749542166!2d77.30128593122096!3d12.954459518753195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1715339979320!5m2!1sen!2sin" width="400" height="300" loading="fast"></iframe>
+          </figure>
+        </section>
+
+        <section class="contact-form">
+<!-- 
+    =======================================================================
+
+    This is a working contact form. To receive email, 
+    Replace YOUR_ACCESS_KEY_HERE with your actual Access Key.
+
+    Create Access Key here 👉 https://web3forms.com/
+
+    =======================================================================
+ -->
+
+ <!-- 
+    This is a working contact form. To receive email, 
+    Replace YOUR_ACCESS_KEY_HERE with your actual Access Key.
+
+    Create Access Key here 👉 https://web3forms.com/
+ -->
+
+  </section>
+          <h3 class="h3 form-title">Let's Talk!</h3>
+
+          <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="bb5610cd-67e1-478c-8599-dc0ece8f49be">
+            <div class="input-wrapper">
+              <input type="text" name="Name" class="form-input" placeholder="Full name" required="" data-form-input="">
+
+              <input type="email" name="email" class="form-input" placeholder="Email address" required="" data-form-input="">
+            </div>
+            <textarea name="message" class="form-input" placeholder="Your Message" required="" data-form-input=""></textarea>
+            <p class="service-item-text">
+              You will receive an email at the email address you will provide. If you provide spam in the given fields, your submission will be classified as invalid and will be automatically ignored.
+             </p>
+             
+            <div class="h-captcha" data-captcha="true"></div>
+            <button class="form-btn" type="submit">
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+
+          </form>
+          <script src="../web3forms.com/client/script.js" async="" defer=""></script>
+             
+     <section class="contact-form">
+        <!-- 
+            =======================================================================
+        
+            This is a working contact form. To receive email, 
+            Replace YOUR_ACCESS_KEY_HERE with your actual Access Key.
+        
+            Create Access Key here 👉 https://web3forms.com/
+        
+            =======================================================================
+         -->
+        
+         <!-- 
+            This is a working contact form. To receive email, 
+            Replace YOUR_ACCESS_KEY_HERE with your actual Access Key.
+        
+            Create Access Key here 👉 https://web3forms.com/
+         -->
+         <br>
+         
+         <br>
+          </section>
+       <br>
+       <hr>
+       <br>
+            
+          
+          
+       
+          <h2 class="h2 article-title">Let's build something awesome together!</h2>
+          <p class="service-item-text">
+            I'm also a part-time front-end web development freelancer... Convinced? Hire me!
+            </p>
+    
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="bb5610cd-67e1-478c-8599-dc0ece8f49be">
+      <div class="input-wrapper">
+        <input type="text" name="Name" class="form-input" placeholder="Full name" required="" data-form-input="">
+
+        <input type="email" name="email" class="form-input" placeholder="Email address" required="" data-form-input="">
+        <input type="text" name="Project Name" class="form-input" placeholder="Project Name" required="" data-form-input="">
+        <input type="text" name="Organisation" class="form-input" placeholder="Organisation" required="" data-form-input="">
+        <input type="text" name="Your Location" class="form-input" placeholder="Your Location" required="" data-form-input="">
+        <input type="text" name="My role" class="form-input" placeholder="My role" required="" data-form-input="">
+        <input type="text" name="Deadline" class="form-input" placeholder="Deadline" required="" data-form-input="">
+        <input type="text" name="Budget" class="form-input" placeholder="Budget" required="" data-form-input="">
+        
+      </div>
+      <p style="color:#f8d66e;">Note: I only accept payment in Cryptocurrency (Bitcoin)</p>
+     
+    
+      <textarea name="More detials about the project" class="form-input" placeholder="More detials about the project" required="" data-form-input=""></textarea>
+     
+      <p class="service-item-text">
+          I will get back to you on email within 72 hours of your hire request along with my status of availability. 
+       </p>
+       
+       
+      <div class="h-captcha" data-captcha="true"></div>
+      <button class="form-btn" type="submit">
+        <ion-icon name="paper-plane"></ion-icon>
+        <span>Hire me</span>
+      </button>
+          </form>
+          <script src="../web3forms.com/client/script.js" async="" defer=""></script>
+             
+     <section class="contact-form">
+        <!-- 
+            =======================================================================
+        
+            This is a working contact form. To receive email, 
+            Replace YOUR_ACCESS_KEY_HERE with your actual Access Key.
+        
+            Create Access Key here 👉 https://web3forms.com/
+        
+            =======================================================================
+         -->
+        
+         <!-- 
+            This is a working contact form. To receive email, 
+            Replace YOUR_ACCESS_KEY_HERE with your actual Access Key.
+        
+            Create Access Key here 👉 https://web3forms.com/
+         -->
+         <br>
+       
+         <br>
+          </section>
+          <hr>
+          <br>
+                  <h3 class="h3 form-title"><strong>Invite Tuhin to an online event!</strong>   </h3>
+                  <p style="color:#f8d66e;">Please note that I am only available for online events, and not physical ones. I repeat, I cannot be physically present at your event...</p>
+                  <br>
+        
+                  <form action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="bb5610cd-67e1-478c-8599-dc0ece8f49be">
+                    <div class="input-wrapper">
+                      <input type="text" name="Name" class="form-input" placeholder="Full name" required="" data-form-input="">
+        
+                      <input type="email" name="email" class="form-input" placeholder="Email address" required="" data-form-input="">
+                      <input type="text" name="Event Name" class="form-input" placeholder="Event Name" required="" data-form-input="">
+                      <input type="text" name="Organisation" class="form-input" placeholder="Organisation" required="" data-form-input="">
+                      <input type="text" name="Potential Dates" class="form-input" placeholder="Potential Dates" required="" data-form-input="">
+                      <input type="text" name="Event Time" class="form-input" placeholder="Event Time" required="" data-form-input="">
+                    </div>
+                    <textarea name="More detials about the event" class="form-input" placeholder="More detials about the event" required="" data-form-input=""></textarea>
+                    <p class="service-item-text">
+                        I will get back to you within 48 hours to confirm your invitation to the event, as well as to provide an update on my availability. 
+                     </p>
+                     
+                    <div class="h-captcha" data-captcha="true"></div>
+                    <button class="form-btn" type="submit">
+                      <ion-icon name="paper-plane"></ion-icon>
+                      <span>Invite me!</span>
+                    </button>
+        
+                  </form>
+                  <script src="../web3forms.com/client/script.js" async="" defer=""></script>
+                  
+        
+    
+       
+
+            
+                  <div id="result"></div>
+                </article></article></div>
+              
+            
+          
+      
+
+<!--
+        
+
+       
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="script.js"></script>
+  <script src="bootstrap.min.js"></script>
+  <script src="custom.js"></script>
+  
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="../unpkg.com/ionicons%405.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule="" src="../unpkg.com/ionicons%405.5.2/dist/ionicons/ionicons.js"></script>
+
+
+
+</main></body></html>
