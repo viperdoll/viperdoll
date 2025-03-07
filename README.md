@@ -1,5 +1,6 @@
 ## Hi there, I'm Viper! 👋
- 🔭 I’m currently working in DaemonNest
+ 🔭 I’m currently working in DaemonNest.
+ 
 I do `web design, graphic design, UI/UX`
 
 » I'm 14, 🇮🇳, 🏳‍🌈
