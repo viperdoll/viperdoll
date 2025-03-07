@@ -1,0 +1,1283 @@
+
+<!DOCTYPE html><html lang="en"><head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuhin Sarkar</title>
+  
+    <!--
+      - favicon
+    -->
+    <link rel="shortcut icon" href="icons8-webpage-48.png" type="image/x-icon">
+  
+    <!--
+      - custom css link
+    -->
+    <link rel="stylesheet" href="style.css">
+  
+  
+  
+    <!--
+      - google font link
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  
+  
+  </head><body>
+     
+      
+        
+          <title>Parcel Sandbox</title>
+          <meta charset="UTF-8">
+        
+      
+        
+      
+      
+  
+      
+         
+        
+      
+          <script>
+              (function () {
+                "use strict";
+                /*
+                 * Form Validation
+                 */
+        
+                // Fetch all the forms we want to apply custom validation styles to
+                const forms = document.querySelectorAll(".needs-validation");
+                const result = document.getElementById("result");
+                // Loop over them and prevent submission
+                Array.prototype.slice.call(forms).forEach(function (form) {
+                  form.addEventListener(
+                    "submit",
+                    function (event) {
+                      if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+        
+                        form.querySelectorAll(":invalid")[0].focus();
+                      } else {
+                        /*
+                         * Form Submission using fetch()
+                         */
+        
+                        const formData = new FormData(form);
+                        event.preventDefault();
+                        event.stopPropagation();
+                        const object = {};
+                        formData.forEach((value, key) => {
+                          object[key] = value;
+                        });
+                        const json = JSON.stringify(object);
+                        result.innerHTML = "Please wait...";
+        
+                        fetch("https://api.web3forms.com/submit", {
+                          method: "POST",
+                          headers: {
+                            "Content-Type": "application/json",
+                            Accept: "application/json"
+                          },
+                          body: json
+                        })
+                          .then(async (response) => {
+                            let json = await response.json();
+                            if (response.status == 200) {
+                              result.innerHTML = json.message;
+                              result.classList.remove("text-gray-500");
+                              result.classList.add("text-green-500");
+                            } else {
+                              console.log(response);
+                              result.innerHTML = json.message;
+                              result.classList.remove("text-gray-500");
+                              result.classList.add("text-red-500");
+                            }
+                          })
+                          .catch((error) => {
+                            console.log(error);
+                            result.innerHTML = "Something went wrong!";
+                          })
+                          .then(function () {
+                            form.reset();
+                            form.classList.remove("was-validated");
+                            setTimeout(() => {
+                              result.style.display = "none";
+                            }, 5000);
+                          });
+                      }
+                      form.classList.add("was-validated");
+                    },
+                    false
+                  );
+                });
+              })();
+            </script>
+        
+      
+      
+    
+  
+    <main>
+  
+  <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar="">
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="facepic.png" alt="Tuhin Sarkar" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Tuhin Sarkar">Tuhin Sarkar</h1>
+          
+          <p class="title">Computer Programmer</p>
+     
+    
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <img src="gmail.png">
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:tuhinsarkar.me@gmail.com" class="contact-link" style="color:#f8d66e;" target="_blank">tuhinsarkar.me@gmail.com</a>
+            
+            </div>
+
+          </li>
+
+          
+          <li class="contact-item">
+
+            <div class="icon-box">
+             <img src="discord.png">
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Discord</p>
+             <p style="color:#f8d66e;">@tuhin.sarkar</p>
+          
+            </div>
+          </li>
+       
+          <li class="contact-item">
+
+            <div class="icon-box">
+             <img src="india.png">
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">(India) Timezone:</p>
+             <p style="color:#f8d66e;"><iframe src="https://free.timeanddate.com/clock/i9sni5pd/n438/tlin/fcf8d66e/tc1e1e1f/pc1e1e1f/tt0/tw0/tm3/td2/th2/ts1/ta1/tb1" frameborder="0" width="164" height="18"></iframe>
+             </p>
+          
+            </div>
+          </li>
+
+
+     
+      </ul></div>
+      
+      
+                
+              
+  
+              
+  
+            
+             
+  
+            
+          
+  
+     
+  <br>
+         
+          <ul class="social-list">
+  
+  
+            <li class="social-item">
+              <a href="https://www.instagram.com/viperdoll__" class="social-link">
+                <img src="instagram.png">
+              </a>
+            </li>
+         
+            
+            <li class="social-item">
+              <a href="https://youtube.com/@viperdoll" class="social-link">
+                <img src="youtube.png">
+              </a>
+            </li>
+            <li class="social-item">
+              <a href="https://github.com/viperdoll" class="social-link">
+                <img src="github.png">
+              </a>
+            </li>
+            <li class="social-item">
+              <a href="https://x.com/viperdoll_" class="social-link">
+                <img src="x.png">
+              </a>
+            </li>
+            <li class="social-item">
+              <a href="https://reddit.com/u/awedaxel" class="social-link">
+                <img src="reddit.png">
+              </a>
+            </li>
+      
+  
+          </ul>
+  
+        
+        <br>  
+  
+      </aside>
+  
+
+  
+      <!--
+        - #main-content
+      -->
+  
+      <div class="main-content">
+  
+        <!--
+          - #NAVBAR
+        -->
+  
+        <nav class="navbar">
+  
+          <ul class="navbar-list">
+  
+            <li class="navbar-item">
+                <a class='navbar-link' data-nav-link href='/'>Home</a>
+              </li>
+    
+              <li class="navbar-item">
+                <a class='navbar-link ' data-nav-link href='education.html'>Education</a>
+              </li>
+    
+              <li class="navbar-item">
+                <a class='navbar-link active' data-nav-link href='portfolio.html'>Portfolio</a>
+              </li>
+    
+              <li class="navbar-item">
+                <a class="navbar-link" data-nav-link="" href="https://sarknet.blogspot.com">Blog</a>
+              </li>
+    
+              <li class="navbar-item">
+                <a class='navbar-link' data-nav-link href='contact.html'>Contact</a>
+              </li>
+  
+  
+          </ul>
+  
+        </nav>
+  
+  
+  
+  
+
+        <!--
+        - #PORTFOLIO
+      -->
+
+      <article class="portfolio  active" data-page="Portfolio">
+       <section class="blog-posts">
+        
+  
+            <ul class="blog-posts-list">
+        
+  
+     
+         
+          
+    
+              <header>
+                <h2 class="h2 article-title">Literary Work</h2>
+              </header>
+                  <br>
+                 
+               
+                <li class="blog-post-item">
+                  <a href="https://archive.org/details/trans-lives-in-russia-lilly">
+
+
+
+                    <div class="blog-content">
+        
+                      <div class="blog-meta">
+                        <p class="blog-category"><b>Journalistic Article</b> | </p>
+                        <p class="blog-category">Published in Internet Archive</p>
+        
+                        <span class="dot"></span>
+        
+                        <time datetime="02-06-2024">24/02/2025</time>
+                      </div>
+        
+                      <h3 class="h3 blog-item-title">Trans Lives In Russia- Lily
+                      </h3>
+                        <p class="blog-text">
+                          This is written by a person named Lilly who is currently living in a censored part of the world - Russia. This document provides a detailed personal and historical account of LGBTQ+ life in Russia from the 1990s to the present. It explores the evolving societal attitudes, legal changes, and political shifts affecting the queer and transgender communities. From the initial openness of the 1990s amid post-Soviet turmoil to the increasing government restrictions in the 2010s and the severe repression of trans rights following the war, this text offers a firsthand perspective on survival, resilience, and the struggle for identity in an increasingly hostile environment.
+                        
+                      </p>
+        
+                    </div>
+        
+                  </a>
+                </li>
+                <li class="blog-post-item">
+                  <a href="https://archive.org/details/accuracy-of-reverse-engineering-algorithms/">
+
+
+
+                    <div class="blog-content">
+        
+                      <div class="blog-meta">
+                        <p class="blog-category"><b>Research Paper</b> | </p>
+                        <p class="blog-category">Published in Internet Archive</p>
+        
+                        <span class="dot"></span>
+        
+                        <time datetime="02-06-2024">02/05/2024</time>
+                      </div>
+        
+                      <h3 class="h3 blog-item-title">Accuracy Of Deepfake Detecting Reverse Engineering
+                        Algorithms</h3>
+                        <p class="blog-text">
+                         
+                          
+                    
+                <b>Abstract: </b>The advent of deepfake technology, which uses artificial intelligence to create hyper-realistic and fabricated
+                        video and audio, has introduced significant challenges for social media platforms and their users. This paper
+                        explores the harms of deepfakes, including the erosion of trust in digital media, the potential for political
+                        manipulation, the facilitation of cyberbullying, and the threat to personal privacy. This study further examines
+                        possible solutions that include limiting access to artificial intelligence, furthermore, the urgency for effective
+                        countermeasures. To mitigate these threats, the paper discusses a comprehensive approach involving
+                        technological solutions, policy interventions, law enforcement, and public education. Specifically, the
+                        advancement in detection algorithms, robust regulatory frameworks, and increased digital literacy among
+                        users are put forward as essential strategies to combat the proliferation of deepfakes on social media. 
+                        
+                      </p>
+        
+                    </div>
+        
+                  </a>
+                  
+                </li>
+              
+          
+           </section>
+          
+           <br>
+           
+ &nbsp; &nbsp; &nbsp;
+        <header>
+          <h2 class="h2 article-title">Websites</h2>
+        </header>
+
+     
+      
+
+          <ul class="project-list">
+            <li class="project-item  active" data-filter-item="" data-category="web development">
+              <a href="https://lecky.netlify.app">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="Annotation 2024-12-02 103859.png" alt="finance" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Arnav Anand's Portfolio Website</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item="" data-category="web development">
+              <a href="https://shritishparram.netlify.app">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="shritishwebsite.png" alt="finance" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Shritish Parram's Portfolio Website</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item="" data-category="web development">
+              <a href="https://itsvinay.netlify.app">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="vinay.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Vinay Kumar's Portfolio Website</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+           
+            <li class="project-item  active" data-filter-item="" data-category="web development">
+              <a href="https://kasisatya.netlify.app/">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="kasi.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Kasi Satya's Portfolio Website</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+            <li class="project-item  active" data-filter-item="" data-category="web development">
+              <a href="https://notnishanth.netlify.app/">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="nishanth.png" alt="Nishanth" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Nishanth Chinthaginjala's Portfolio Website</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+            <li class="project-item  active" data-filter-item="" data-category="web development">
+              <a href="https://vintage-steve.github.io/">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  
+
+                  <img src="t7site.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">T7 / Melon N**** Portfolio Website</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item="" data-category="web design">
+              <a href="https://tuhinsarkar-xyz.github.io/to-do-app/">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="todo.png" alt="fundo" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">To-do Website (Under development)</h3>
+
+                <p class="project-category">Web design</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item="" data-category="applications">
+              <a href="https://tuhinsarkar-xyz.github.io/scientific-calculator/">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="calc.png" alt="brawlhalla" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Scientific Calculator</h3>
+
+                <p class="project-category">Applications</p>
+
+              </a>
+            </li>
+
+          
+
+    
+              
+            
+
+            
+         
+
+       
+
+          </ul>
+          </section>
+          <br>
+          <style>
+            .card-container {
+                display: flex; /* Use flexbox for layout */
+                justify-content: space-between; /* Optional: space between cards */
+            }
+            .card {
+                border: 1px solid #ccc; /* Add border for visibility */
+                padding: 20px; /* Add some padding */
+                margin: 10px; /* Add margin for spacing */
+                flex: 1; /* Allow cards to grow equally */
+            }
+        </style>
+    </head>
+    <body>
+        <section class="blog-posts">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+  
+            <ul class="blog-posts-list">
+        
+  
+     
+         
+          
+    
+                <header>
+                    <h2 class="h2 article-title">Small-Scale Projects</h2>
+                  </header>
+                  <br>
+                 
+               
+                <li class="blog-post-item">
+                  <a href="https://iysjournal.netlify.app" target="_blank">
+    
+                    <figure class="blog-banner-box">
+                      <img src="Annotation 2024-12-02 102613.png" alt="The Deceptive Counselor: A Story of Therapeutic Misconduct" loading="lazy">
+                    </figure>
+    
+                    <div class="blog-content">
+    
+                  
+    
+                      <h3 class="h3 blog-item-title">International Youth Science Journal</h3>
+    
+                      <p class="blog-text">
+                        The International Youth Science Journal is a non-profit organisation that allows anyone under the age of 20 to publish their scientific work or research papers for free. It is completely run for free and via volunteers.
+                      </p>
+    
+                    </div>
+    
+                  </a>
+                </li>
+                <li class="blog-post-item">
+                  <a href="https://nsocial.netlify.app" target="_blank">
+    
+                    <figure class="blog-banner-box">
+                      <img src="Annotation 2024-12-02 102731.png" alt="The Dark Side of Anonymity: A Tech Prodigy's Path to Regret " loading="lazy">
+                    </figure>
+    
+                    <div class="blog-content">
+    
+                    
+    
+                      <h3 class="h3 blog-item-title">NSocial</h3>
+    
+                      <p class="blog-text">
+                        NSocial is a platform that allows students of the Narayana Group of Institutions to find each other through a database they sign up for. NLeaks is a website where students from Narayana and some other school can voluntarily upload last year question papers, case study question and study materials to help other students in the future.
+                      </p>
+    
+                    </div>
+    
+                  </a>
+                </li>
+                <li class="blog-post-item">
+                  <a href="https://fifinkle.netlify.app" target="_blank">
+    
+                    <figure class="blog-banner-box">
+                      <img src="fifinkle.png" alt="The Dark Side of Anonymity: A Tech Prodigy's Path to Regret " loading="lazy">
+                    </figure>
+    
+                    <div class="blog-content">
+    
+                    
+    
+                      <h3 class="h3 blog-item-title">Fifinkle A.I</h3>
+    
+                      <p class="blog-text">
+                        Fifinkle is a one-of-a-kind independently owned companion artificial intelligence. It uses Artificial Intelligence to be the trusted companion you have always wanted. You can use Fifinkle for personal use without creating an account.
+                      </p>
+    
+                    </div>
+    
+                  </a>
+                </li>
+                <li class="blog-post-item">
+                  <a href = "https://facemash0.netlify.app" target="_blank">
+    
+                    <figure class="blog-banner-box">
+                      <img src="Annotation 2024-12-02 102818.png" alt="The Dark Side of Anonymity: A Tech Prodigy's Path to Regret " loading="lazy">
+                    </figure>
+    
+                    <div class="blog-content">
+    
+                     
+    
+                      <h3 class="h3 blog-item-title">Facesmash 2.0</h3>
+    
+                      <p class="blog-text">
+                        The website allows Narayana students to rank each other based on attractiveness. The algorithm presented pairs of student photos side by side and asked students to choose which one they found more attractive. The algorithm then generated a ranking system based on the students' votes. The photos of the students were collected from the webcam footage during an online class videoconfrencing session.
+                      </p>
+    
+                    </div>
+    
+                  </a>
+                </li>
+          
+           </section>
+          
+           <br>
+         
+           <section class="blog-posts">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+  
+            <ul class="blog-posts-list">
+        
+  
+     
+         
+          
+    
+                <header>
+                    <h2 class="h2 article-title">Short Movies</h2>
+                  </header>
+                  <br>
+                 
+               
+                <li class="blog-post-item">
+                  <a href="https://youtu.be/Qi83hYvg6R4?si=dKXzvaL7tRf1U8_Q" target="_blank">
+    
+                 <!-- Responsive YouTube Embed -->
+  <div class="video-responsive">
+    <iframe width="760" height="515" src="https://www.youtube.com/embed/Qi83hYvg6R4?si=dGn9zbgxIqAkxxiR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+
+  <style>
+    .video-responsive {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        overflow: hidden;
+    }
+    .video-responsive iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+  </style>
+    
+                    <div class="blog-content">
+    
+                  
+    
+                      <h3 class="h3 blog-item-title">ABDUCTED 3 - OFFICIAL TRAILER | Actors - Nishanth, Kasi and Tejeesh
+                      </h3>
+    
+                      <p class="blog-text">
+                        Actors: Nishanth, Tejeesh, Kasi
+                        Director: Tuhin Sarkar
+                        Camera Man: Tuhin Sarkar
+                        Editor: Tuhin Sarkar
+                        
+                      </p>
+    
+                    </div>
+    
+                  </a>
+                </li>
+                <li class="blog-post-item">
+                  <a href="https://youtu.be/WuRAFFADAOk?si=qt_nH-Ll5Ep1cMpD" target="_blank">
+    
+                    <!-- Responsive YouTube Embed -->
+  <div class="video-responsive">
+    <iframe width="760" height="515" src="https://www.youtube.com/embed/WuRAFFADAOk?si=uRARpoNAfFzrx6D8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+
+  <style>
+    .video-responsive {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        overflow: hidden;
+    }
+    .video-responsive iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+  </style>
+    
+                    <div class="blog-content">
+    
+                    
+    
+                      <h3 class="h3 blog-item-title">ABDUCTED 2 - FULL MOVIE | Actors - Nishanth, Geethan, Tejeesh, Kasi, Sai, Vivaan, Pravinya</h3>
+    
+                      <p class="blog-text">
+                        Actors: Nishanth, Geethan, Tejeesh, Kasi, Sai, Vivaan, Pravinya
+                        Director: Tuhin Sarkar
+                        Camera Man: Tuhin Sarkar
+                        Editor: Tuhin Sarkar
+                      </p>
+    
+                    </div>
+    
+                  </a>
+                </li>
+                <li class="blog-post-item">
+                  <a href = "https://youtu.be/TQBI6_fIr24?si=1TS2tT-MQXq_rOkG" target="_blank">
+    
+                    <!-- Responsive YouTube Embed -->
+  <div class="video-responsive">
+    <iframe width="760" height="515" src="https://www.youtube.com/embed/TQBI6_fIr24?si=ko9MlMU0_Ft5ONnP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+
+  <style>
+    .video-responsive {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        overflow: hidden;
+    }
+    .video-responsive iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+  </style>
+    
+                    <div class="blog-content">
+    
+                     
+    
+                      <h3 class="h3 blog-item-title">ABDUCTED II - OFFICIAL TRAILER | Actors - Nishanth, Geethan, Tejeesh, Kasi, Sai
+                      </h3>
+    
+                      <p class="blog-text">
+                        Actors: Nishanth, Geethan, Tejeesh, Kasi, Sai 
+                        Director: Tuhin Sarkar
+                        Camera Man: Tuhin Sarkar
+                        Editor: Tuhin Sarkar
+                        
+                      </p>
+    
+                    </div>
+    
+                  </a>
+                </li>
+          
+           </section>
+          
+           <br>
+         
+     
+   
+      <div class="card-container">
+     
+   
+      
+    </div>
+          <br>
+          <header>
+            <h2 class="h2 article-title">Older versions of my website</h2>
+          </header>
+          <h5 class="h5 clients-title">Are you experiencing any bugs? Do you want to roll back to a previous version of my website, or are you just interested in viewing an earlier version?</h5>
+        <br>
+          <section class="projects">
+  
+
+  
+      
+  
+            <ul class="project-list">
+  
+              <li class="project-item  active" data-filter-item="" data-category="web development">
+                <a href="https://web.archive.org/web/20240807132338/https://tuhinsarkar.netlify.app/">
+  
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+  
+                    <img src="v3.png" alt="finance" loading="lazy">
+                  </figure>
+  
+                  <h3 class="project-title">Portfolio (V3)</h3>
+  
+                  <p class="project-category">Version 3</p>
+  
+                </a>
+              </li>
+  
+              <li class="project-item  active" data-filter-item="" data-category="web development">
+                <a href="https://web.archive.org/web/20240513101254/https://tuhinsarkar-xyz.github.io/">
+  
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+  
+                    <img src="v2.png" alt="orizon" loading="lazy">
+                  </figure>
+  
+                  <h3 class="project-title">Portfolio (V2)</h3>
+  
+                  <p class="project-category">Version 2</p>
+  
+                </a>
+              </li>
+             
+              <li class="project-item  active" data-filter-item="" data-category="web development">
+                <a href="https://web.archive.org/web/20240807132338/https://web.archive.org/web/20240428070340/https://tuhin-sarkar-it.github.io/tuhin-portfolio.github.io/">
+  
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+  
+                    <img src="v1.png" alt="orizon" loading="lazy">
+                  </figure>
+  
+                  <h3 class="project-title">Portfolio (V1)</h3>
+  
+                  <p class="project-category">Version 1</p>
+  
+                </a>
+              </li>
+
+  
+   </ul>
+   </section>
+        
+        
+<br><br>
+          <br>
+
+          <header>
+            <h2 class="h2 article-title">Presentations</h2>
+          </header>
+  
+          <section class="projects">
+  
+            
+  
+            <ul class="project-list">
+              <li class="project-item  active" data-filter-item="" data-category="web development">
+                <a href="https://1drv.ms/p/c/42250d1dbefa3d87/EbY0HYQOkQdOjaQEIEWvwIMBWY6bTAgMLQOxi3JCwCP8rw?e=CsM698" target="_blank" >
+  
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+  
+                    <img src="sdg2.png" alt="finance" loading="lazy">
+                  </figure>
+  
+                  </a><h3 class="project-title"><a href="https://1drv.ms/p/c/42250d1dbefa3d87/EbY0HYQOkQdOjaQEIEWvwIMBWY6bTAgMLQOxi3JCwCP8rw?e=CsM698" target="_blank" ></a><a href="https://1drv.ms/p/c/42250d1dbefa3d87/EbY0HYQOkQdOjaQEIEWvwIMBWY6bTAgMLQOxi3JCwCP8rw?e=CsM698" style="color:#f8d66e;">(SDG) Sustainable Development Goals (Round 2)</a></h3><a href="https://1drv.ms/p/c/42250d1dbefa3d87/EbY0HYQOkQdOjaQEIEWvwIMBWY6bTAgMLQOxi3JCwCP8rw?e=CsM698" target="_blank"  style="color:#f8d66e;">
+  
+  
+                </a>
+              </li>
+              <li class="project-item  active" data-filter-item="" data-category="web development">
+                <a href="https://1drv.ms/p/c/42250d1dbefa3d87/EdnSOssXOA1MmgR1W9AklEYBfe14tAlMclarx6QBW8kUEQ?e=HOZgj8" target="_blank" >
+  
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+  
+                    <img src="sdg.png" alt="finance" loading="lazy">
+                  </figure>
+  
+                  </a><h3 class="project-title"><a href="https://1drv.ms/p/c/42250d1dbefa3d87/EdnSOssXOA1MmgR1W9AklEYBfe14tAlMclarx6QBW8kUEQ?e=HOZgj8" target="_blank" ></a><a href="https://1drv.ms/p/c/42250d1dbefa3d87/EdnSOssXOA1MmgR1W9AklEYBfe14tAlMclarx6QBW8kUEQ?e=HOZgj8" target="_blank"  style="color:#f8d66e;">(SDG) Sustainable Development Goals (Round 1)</a></h3><a href="https://1drv.ms/p/c/42250d1dbefa3d87/EdnSOssXOA1MmgR1W9AklEYBfe14tAlMclarx6QBW8kUEQ?e=HOZgj8" style="color:#f8d66e;">
+  
+  
+                </a>
+              </li>
+  
+ 
+  
+            </ul>
+            </section>
+            <br>
+         
+        
+
+  
+
+      
+          
+            <br>
+            <section class="clients">
+              <h2 class="h2 article-title">Building stuff!</h2>
+              <h5 class="h5 clients-title">I love building stuff, I practice Robotics as well... Being a tech nerd / prodigy without Robotics? Certainly not (in my opinion)</h5>
+            
+            
+            
+            </section>
+        
+                    
+                 
+                  </li>
+                
+                    <li class="testimonials-item">
+                      <div class="content-card" data-testimonials-item="">
+                  
+                       
+                          <a href="https://imgur.com/gallery/academic-fair-inventra-2024-25-KErrRjZ">
+                  
+                            <figure class="project-img">
+                              <div class="project-item-icon-box">
+                              
+                              </div>
+                  
+                               <Center><blockquote class="imgur-embed-pub" lang="en" data-id="a/KErrRjZ" data-context="false" ><a href="//imgur.com/a/KErrRjZ"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script></center>
+                            </figure>
+                            <a href="https://imgur.com/gallery/academic-fair-inventra-2024-25-KErrRjZ">
+                  
+                            <h3 class="project-title"> Inventra 2024-2025, Academic Fair (Narayana BLR-WF)</h3>
+                            <p class="blog-text">
+                              In this project, I made an automatic soil moisture & watering sensor. By this project, you can automatically water a planet based on whenever the plant needs water and the soil is dry.
+                            </p>
+                  </a>
+                  
+                           
+                  
+                  </div>
+                  </li>
+                    <ul class="testimonials-list has-scrollbar">
+            
+              <li class="testimonials-item">
+                <div class="content-card" data-testimonials-item="">
+            
+                 
+                    <a href="https://www.youtube.com/shorts/DAKkMaH1MOg">
+            
+                      <figure class="project-img">
+                        <div class="project-item-icon-box">
+                        
+                        </div>
+            
+                        <li class="blog-post-item">
+                          <a href="https://youtu.be/Qi83hYvg6R4?si=dKXzvaL7tRf1U8_Q" target="_blank">
+            
+                         <!-- Responsive YouTube Embed -->
+          <div class="video-responsive">
+            <iframe width="760" height="515" src="https://www.youtube.com/embed/LG-6te8wzQk?si=5wWhA17wsSWJm8vW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        
+          <style>
+            .video-responsive {
+                position: relative;
+                padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+                height: 0;
+                overflow: hidden;
+            }
+            .video-responsive iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+          </style>
+                      </figure>
+            
+                      <h3 class="project-title">(DIY) Driving Simulator</h3>
+                      <p class="blog-text">
+                        I'm excited to announce the improved and more advanced than ever, third edition of my successful test of my DIY driving simulator. Launched in August 2023, this simulator lets me experience real-life driving scenarios with remarkable precision, all without breaking the bank. It's both affordable and effective—so much so that it's one of the most functional steering wheel models you can create at this price point.
+                      </p>
+            </a>
+            
+                     
+            
+            </div>
+            </li><li class="testimonials-item">
+              <div class="content-card" data-testimonials-item="">
+            
+               
+
+            
+                    <figure class="project-img">
+                      <div class="project-item-icon-box">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </div>
+            
+                  <img src="pc.jpg">
+                    </figure>
+            
+                    <h3 class="project-title">PC Build</h3>
+                    <p class="blog-text">
+                    At the age of 13, I sucessfully build my first PC from scratch, buying parts online seperately and assembling it. It surprisingly booted up on 11th April, 2024 for the first time. This is a potato with an Intel Core i5 3570, 8GB of DDR3 Ram, and 1TB of Hard Disk space, atleast enough to get my work done...
+                     </p>
+            
+                   
+            </a>
+            </div>
+                    
+                 
+                  </li>
+                  
+                </ul>
+            
+            
+            <br>
+            <div>
+            <h2 class="h2 article-title">Participation in Competitions</h2>
+            
+            </div>
+          </a><ul class="testimonials-list has-scrollbar"><a href="https://discord.gg/GXMECd2guv">
+                          
+          </a><li class="testimonials-item"><a href="https://discord.gg/GXMECd2guv">
+            </a><div class="content-card" data-testimonials-item=""><a href="https://discord.gg/GXMECd2guv">
+        
+             
+                </a><a href="https://youtu.be/ktkO_XOR54w?si=ZnDjpVr_VaYaua1p">
+        
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+        
+                    <li class="blog-post-item">
+                      <a href="https://youtu.be/Qi83hYvg6R4?si=dKXzvaL7tRf1U8_Q" target="_blank">
+        
+                     <!-- Responsive YouTube Embed -->
+      <div class="video-responsive">
+        <iframe width="760" height="515" src="https://www.youtube.com/embed/ktkO_XOR54w?si=0xISD8i7XuXA0CK3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    
+      <style>
+        .video-responsive {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        .video-responsive iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+      </style>
+                  </figure>
+        
+                  <h3 class="project-title">Cryptics 7.0 - Vydehi</h3>
+                  <p class="blog-text">
+                   On 12th November 2024, I was given the oppurtunity to represent our school in the Cryptics 7.0 competition! Cryptics is an exhilarating computer quiz hosted at Vydehi School of Excellence, where participants from across Bengaluru come together to test their knowledge in data, algorithms, and cybersecurity. This event is more than just a competition—it's an educational journey that delves deep into the digital universe, uncovering the secrets of programming languages, data security, and the ever-evolving world of technology. I'm excited to be part of this incredible experience, where I'll have the opportunity to challenge my skills, crack codes, and explore the mysteries that shape our digital lives.
+                    
+                  </p>
+        
+                 
+        
+                </a>
+             
+              </div></li></ul>
+              
+        
+        
+        </section>
+            <ul class="testimonials-list has-scrollbar">
+                          
+              <li class="testimonials-item">
+          
+              
+            
+            
+            
+            <ul class="testimonials-list has-scrollbar">
+            
+              <li class="testimonials-item">
+                <div class="content-card" data-testimonials-item="">
+              
+                 
+                  <a href="https://youtu.be/mpy_W3XLZq8?si=BEljJW7ZhqIySlQh">
+              
+                      <figure class="project-img">
+                        <div class="project-item-icon-box">
+                       
+                        </div>
+              
+                        <li class="blog-post-item">
+                          <a href="https://youtu.be/Qi83hYvg6R4?si=dKXzvaL7tRf1U8_Q" target="_blank">
+            
+                         <!-- Responsive YouTube Embed -->
+          <div class="video-responsive">
+            <iframe width="760" height="515" src="https://www.youtube.com/embed/mpy_W3XLZq8?si=JmpBhkHK2m6xghgZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        
+          <style>
+            .video-responsive {
+                position: relative;
+                padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+                height: 0;
+                overflow: hidden;
+            }
+            .video-responsive iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+          </style>
+                      </figure>
+              
+                      <h3 class="project-title">VMUN 24 (Vydehi Model United Nations)</h3>
+                      <p class="blog-text">
+                        I represented my school at the Vydehi Model United Nations (VMUN) 2024, which happened on August 30 and 31st in Bengaluru. I was in UNESCO (United Nations Educational, Scientific and Cultural Organization), and I am happy to inform that our committee passed! This event brought students from around Bengaluru to tackle global issues through diplomatic simulations. 
+                       </p>
+              
+                     
+      
+              </div>
+                      
+                   
+                    </li><li class="testimonials-item">
+              <div class="content-card" data-testimonials-item="">
+            
+               
+                <a href="https://youtu.be/otZ3pGLYx5w?si=hW80mhE6VaNou84g">
+            
+                    <figure class="project-img">
+                      <div class="project-item-icon-box">
+                     
+                      </div>
+            
+                      <li class="blog-post-item">
+                        <a href="https://youtu.be/Qi83hYvg6R4?si=dKXzvaL7tRf1U8_Q" target="_blank">
+          
+                       <!-- Responsive YouTube Embed -->
+        <div class="video-responsive">
+          <iframe width="760" height="515" src="https://www.youtube.com/embed/otZ3pGLYx5w?si=JbE3heo9MVEC9SMy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      
+        <style>
+          .video-responsive {
+              position: relative;
+              padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+              height: 0;
+              overflow: hidden;
+          }
+          .video-responsive iframe {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+          }
+        </style>
+                    </figure>
+            
+                    <h3 class="project-title">(1st Place) Sustainable Development Goal (SDG)</h3>
+                    <p class="blog-text">
+                      On Saturday, August 3rd, 2024, our school conducted a presentation where we were tasked with discussing the Sustainable Development Goals (SDGs). It was an exciting opportunity to delve into these global objectives and present our understanding and ideas. Our presentation went well, and we were thrilled to be selected for the final round. After days of preparation and fine-tuning our content, we gave our final round audition on August 10th, 2024. The entire experience was both challenging and rewarding, and it reinforced the importance of sustainability in our world today.
+                     </p>
+            
+                   
+    
+            </div>
+                    
+                 
+                  </li></ul>
+            <br><br>
+                              
+                              <section class="testimonials">
+            
+                               
+                      
+                             
+                                        
+                                      
+                      
+                                       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    </section>
+                 
+
+
+  <!--
+          
+  
+         
+  
+  
+  
+    <!--
+      - custom js link
+    -->
+    <script src="script.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="custom.js"></script>
+    
+    <!--
+      - ionicon link
+    -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  
+  </body>
+  
+  </html>

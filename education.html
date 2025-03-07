@@ -1,0 +1,706 @@
+
+<!DOCTYPE html><html lang="en"><head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuhin Sarkar</title>
+  
+    <!--
+      - favicon
+    -->
+    <link rel="shortcut icon" href="icons8-webpage-48.png" type="image/x-icon">
+  
+    <!--
+      - custom css link
+    -->
+    <link rel="stylesheet" href="style.css">
+  
+  
+  
+    <!--
+      - google font link
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  
+  
+  </head><body>
+     
+      
+        
+
+          <meta charset="UTF-8">
+        
+      
+        
+      
+      
+  
+      
+         
+        
+      
+          <script>
+              (function () {
+                "use strict";
+                /*
+                 * Form Validation
+                 */
+        
+                // Fetch all the forms we want to apply custom validation styles to
+                const forms = document.querySelectorAll(".needs-validation");
+                const result = document.getElementById("result");
+                // Loop over them and prevent submission
+                Array.prototype.slice.call(forms).forEach(function (form) {
+                  form.addEventListener(
+                    "submit",
+                    function (event) {
+                      if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+        
+                        form.querySelectorAll(":invalid")[0].focus();
+                      } else {
+                        /*
+                         * Form Submission using fetch()
+                         */
+        
+                        const formData = new FormData(form);
+                        event.preventDefault();
+                        event.stopPropagation();
+                        const object = {};
+                        formData.forEach((value, key) => {
+                          object[key] = value;
+                        });
+                        const json = JSON.stringify(object);
+                        result.innerHTML = "Please wait...";
+        
+                        fetch("https://api.web3forms.com/submit", {
+                          method: "POST",
+                          headers: {
+                            "Content-Type": "application/json",
+                            Accept: "application/json"
+                          },
+                          body: json
+                        })
+                          .then(async (response) => {
+                            let json = await response.json();
+                            if (response.status == 200) {
+                              result.innerHTML = json.message;
+                              result.classList.remove("text-gray-500");
+                              result.classList.add("text-green-500");
+                            } else {
+                              console.log(response);
+                              result.innerHTML = json.message;
+                              result.classList.remove("text-gray-500");
+                              result.classList.add("text-red-500");
+                            }
+                          })
+                          .catch((error) => {
+                            console.log(error);
+                            result.innerHTML = "Something went wrong!";
+                          })
+                          .then(function () {
+                            form.reset();
+                            form.classList.remove("was-validated");
+                            setTimeout(() => {
+                              result.style.display = "none";
+                            }, 5000);
+                          });
+                      }
+                      form.classList.add("was-validated");
+                    },
+                    false
+                  );
+                });
+              })();
+            </script>
+        
+      
+      
+    
+  
+    <main>
+ <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar="">
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="facepic.png" alt="Tuhin Sarkar" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Tuhin Sarkar">Tuhin Sarkar</h1>
+          
+          <p class="title">Computer Programmer</p>
+     
+    
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <img src="gmail.png">
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:tuhinsarkar.me@gmail.com" class="contact-link" style="color:#f8d66e;" target="_blank">tuhinsarkar.me@gmail.com</a>
+            
+            </div>
+
+          </li>
+
+          
+          <li class="contact-item">
+
+            <div class="icon-box">
+             <img src="discord.png">
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Discord</p>
+             <p style="color:#f8d66e;">@tuhin.sarkar</p>
+          
+            </div>
+          </li>
+          <li class="contact-item">
+
+            <div class="icon-box">
+             <img src="india.png">
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">(India) Timezone:</p>
+             <p style="color:#f8d66e;"><iframe src="https://free.timeanddate.com/clock/i9sni5pd/n438/tlin/fcf8d66e/tc1e1e1f/pc1e1e1f/tt0/tw0/tm3/td2/th2/ts1/ta1/tb1" frameborder="0" width="164" height="18"></iframe>
+             </p>
+          
+            </div>
+          </li>
+          
+
+          </li>
+          
+
+
+     
+      </ul></div>
+      
+      
+                
+              
+  
+              
+  
+            
+             
+  
+            
+          
+  
+     
+  <br>
+         
+          <ul class="social-list">
+  
+  
+            <li class="social-item">
+              <a href="https://www.instagram.com/viperdoll__" class="social-link">
+                <img src="instagram.png">
+              </a>
+            </li>
+         
+            
+            <li class="social-item">
+              <a href="https://youtube.com/@viperdoll" class="social-link">
+                <img src="youtube.png">
+              </a>
+            </li>
+            <li class="social-item">
+              <a href="https://github.com/viperdoll" class="social-link">
+                <img src="github.png">
+              </a>
+            </li>
+            <li class="social-item">
+              <a href="https://x.com/viperdoll_" class="social-link">
+                <img src="x.png">
+              </a>
+            </li>
+            <li class="social-item">
+              <a href="https://reddit.com/u/awedaxel" class="social-link">
+                <img src="reddit.png">
+              </a>
+            </li>
+      
+  
+          </ul>
+  
+        
+        <br>  
+  
+      </aside>
+  
+
+  
+      <!--
+        - #main-content
+      -->
+  
+      <div class="main-content">
+  
+        <!--
+          - #NAVBAR
+        -->
+  
+        <nav class="navbar">
+  
+          <ul class="navbar-list">
+  
+            <li class="navbar-item">
+              <a class='navbar-link' data-nav-link href='/'>Home</a>
+            </li>
+  
+            <li class="navbar-item">
+              <a class='navbar-link  active' data-nav-link href='education.html'>Education</a>
+            </li>
+  
+            <li class="navbar-item">
+              <a class='navbar-link' data-nav-link href='portfolio.html'>Portfolio</a>
+            </li>
+  
+            <li class="navbar-item">
+              <a class="navbar-link" data-nav-link="" href="https://sarknet.blogspot.com">Blog</a>
+            </li>
+  
+            <li class="navbar-item">
+              <a class='navbar-link' data-nav-link href='contact.html'>Contact</a>
+            </li>
+  
+  
+  
+          </ul>
+  
+        </nav>
+  
+  
+  
+  <!--
+        - #education
+      -->
+
+      <article class="contact  active" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Education</h2>
+        </header>
+        <section class="clients">
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <img src = "diploma.png">
+            </div>
+
+            <h3 class="h3">Courses taken</h3>
+              
+            </div>
+            <h4 class="h4 article">Here are the courses I took this summer:</h4>
+          &nbsp; &nbsp; &nbsp;
+            <ol class="timeline-list">
+              <li class="timeline-item">
+  
+                <h4 class="h4 timeline-item-title">ChatGPT 101 by Growth School</h4>
+  
+               
+  
+                <p class="timeline-text">
+                  ChatGPT 101, a comprehensive course brought to you by Growth School, designed to unlock the potential of conversational AI. This course is meticulously mentored by Vaibhav Sisinty, a renowned expert in the field of AI and machine learning.
+                </p>
+  
+              </li>
+              
+              <li class="timeline-item">
+  
+                <h4 class="h4 timeline-item-title">Harvard Universitiy's CS50 Course</h4>
+  
+               
+  
+                <p class="timeline-text">
+                  This is CS50x , Harvard University's introduction to the intellectual enterprises of computer science and the art of programming for majors and non-majors alike, with or without prior programming experience. 
+                </p>
+  
+              </li>
+  
+         
+  
+              <li class="timeline-item">
+  
+                <h4 class="h4 timeline-item-title">Princeton Universitiy's Algorithms, Part 1 &amp; 2</h4>
+  
+               
+  
+                <p class="timeline-text">
+                  This course covers the essential information that every serious programmer needs to know about algorithms and data structures, with emphasis on applications and scientific performance analysis of Java implementations. Part I covers elementary data structures, sorting, and searching algorithms. Part II focuses on graph- and string-processing algorithms.
+                </p>
+  
+              </li>
+              <li class="timeline-item">
+  
+                <h4 class="h4 timeline-item-title">Meta Front-End Developer Professional Certificate</h4>
+  
+               
+  
+                <p class="timeline-text">
+                  This course helps you learn front-end web development as a beginner or without any prior experience. 
+                </p>
+  
+              </li>
+              
+            </ol>
+
+        </section>
+      
+      
+      
+
+        <section class="skill">
+        
+          <h3 class="h3 skills-title">Programming Langauges</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">HTML</h5>
+                <data value="90">90%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">CSS</h5>
+                <data value="88">88%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 88%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">JavaScript</h5>
+                <data value="75">75%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 65%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Python</h5>
+                <data value="30">30%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 70%;"></div>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+      
+      <br><br>
+         <!--
+          - testimonials
+        -->
+
+        <section class="testimonials">
+
+          <h3 class="h3 skills-title">Certifications</h3>
+          <style>
+            .gray-button {
+                background-color: gray;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+            }
+    
+            .gray-button:hover {
+                background-color: darkgray;
+            }
+        </style>
+    </head>
+    <body>
+    
+      <a href="material.zip" class="gray-button" download="material.zip">Download All</a>
+      <p class="blog-text">This file has been password protected to avoid misuse. If you want to get access to this file, you can email me at  <a href="mailto:tuhinsarkar.me@gmail.com" class="contact-link" style="color:#f8d66e;" target="_blank">tuhinsarkar.me@gmail.com</a> This file is strictly only to be viewed for the legitimate purposes of assessing my portfolio. </p>
+          <section class="blog-posts">
+            &nbsp; &nbsp; &nbsp; &nbsp;
+ 
+           <ul class="blog-posts-list">
+       
+ 
+    
+        
+         
+   
+            <li class="blog-post-item">
+              <a href="crypticscertificate.jpg">
+
+                <figure class="blog-banner-box">
+                  <img src="crypticscertificate.jpg" alt="The Deceptive Counselor: A Story of Therapeutic Misconduct" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Vydehi School of Excellence </p>
+
+                    <span class="dot"></span>
+
+                   
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Cryptics 7.0 Certification of Participation</h3>
+
+                  <p class="blog-text">
+                   I recieved this certificate for participating in Cryptics 7.0 on 12th November 2024.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+            
+            <li class="blog-post-item">
+              <a href="vmun.jpg">
+
+                <figure class="blog-banner-box">
+                  <img src="vmun.jpg" alt="The Deceptive Counselor: A Story of Therapeutic Misconduct" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Vydehi School of Excellence </p>
+
+                    <span class="dot"></span>
+
+                   
+                  </div>
+
+                  <h3 class="h3 blog-item-title">VMUN Certificate of Participation</h3>
+
+                  <p class="blog-text">
+                   I recieved this certificate for participating in Vydehi Model United Nations 24 on 30th and 31st August 2024.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+             
+               <li class="blog-post-item">
+                 <a href="intso.jpg">
+   
+                   <figure class="blog-banner-box">
+                     <img src="intso.jpg" alt="The Dark Side of Anonymity: A Tech Prodigy's Path to Regret " loading="lazy">
+                   </figure>
+   
+                   <div class="blog-content">
+   
+                     <div class="blog-meta">
+                       <p class="blog-category">Indian National Talent Search Olympiad</p>
+   
+                       <span class="dot"></span>
+   
+                     
+                     </div>
+   
+                     <h3 class="h3 blog-item-title"> 1st Level in English Talent Search Olympiad </h3>
+   
+                     <p class="blog-text">
+                    In grade 3, I attempted the 1st level of (ETSO) English Talent Search Olympiad conducted by (INTSO) Indian National Talent Search Olympiad.
+                     </p>
+   
+                   </div>
+   
+                 </a>
+               </li>
+               <li class="blog-post-item">
+                <a href="fungama.jpg">
+  
+                  <figure class="blog-banner-box">
+                    <img src="fungama.jpg" alt="The Dark Side of Anonymity: A Tech Prodigy's Path to Regret " loading="lazy">
+                  </figure>
+  
+                  <div class="blog-content">
+  
+                    <div class="blog-meta">
+                      <p class="blog-category">Big Bazaar</p>
+  
+                      <span class="dot"></span>
+  
+                    
+                    </div>
+  
+                    <h3 class="h3 blog-item-title"> Certificate of Participation in Kids Fungama </h3>
+  
+                    <p class="blog-text">
+                  In 2019, I competed  in the Big Bazaar Kids Fungama contest, where I received a certificate of participation. It was Christmas time, and I was making a drawing of Santa. My best year in my memories soo far!
+                    </p>
+  
+                  </div>
+  
+                </a>
+              </li>
+          </ul></section>
+   
+          
+</section>
+
+            
+
+                 
+                
+
+             
+
+                <div class="testimonials-text" data-testimonials-text="">
+                  
+
+              </div>
+            
+
+          </ul>
+
+        </section>
+      
+
+        <br>
+   
+      </hr>
+        <!--
+          - testimonials modal
+        -->
+
+        <div class="modal-container" data-modal-container="">
+
+          <div class="overlay" data-overlay=""></div>
+
+          <section class="testimonials-modal">
+
+            <button class="modal-close-btn" data-modal-close-btn="">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src="avatar-1.png" alt="Shritish Parram" width="80" data-modal-img="">
+              </figure>
+
+              <img src="icon-quote.svg" alt="quote icon">
+            </div>
+
+            <div class="modal-content">
+
+              <h4 class="h3 modal-title" data-modal-title="">Shritish Parram</h4>
+
+              
+
+              <div data-modal-text="">
+                <p>
+                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                  lot of experience
+                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                  consectetur adipiscing
+                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                </p>
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+    
+
+       
+
+   
+
+                    
+      
+      
+      </section>
+     
+        
+  <!--
+          
+  
+         
+  
+  
+  
+    <!--
+      - custom js link
+    -->
+    <script src="script.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="custom.js"></script>
+    
+    <!--
+      - ionicon link
+    -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  
+  </body>
+  
+  </html>
