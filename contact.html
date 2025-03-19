@@ -1,130 +1,131 @@
-
 <!DOCTYPE html><html lang="en"><head>
     
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Awedaxel</title>
-  
-    <!--
-      - favicon
-    -->
-    <link rel="shortcut icon" href="icons8-webpage-48.png" type="image/x-icon">
-  
-    <!--
-      - custom css link
-    -->
-    <link rel="stylesheet" href="style.css">
-  
-  
-  
-    <!--
-      - google font link
-    -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
-  
-  
-  </head><body>
-     
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <meta name="description" content="Hi, I'm Tuhin Sarkar. This website is meant to be my “home base” on the internet. I’m a web developer and YouTuber. ">
+
+  <title>Tuhin Sarkar</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="icons8-webpage-48.png" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="style.css">
+
+
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+</head><body>
+   
+    
       
-        
-          <title>Parcel Sandbox</title>
-          <meta charset="UTF-8">
-        
-      
-        
-      
-      
-  
-      
-         
-        
-      
-          <script>
-              (function () {
-                "use strict";
-                /*
-                 * Form Validation
-                 */
-        
-                // Fetch all the forms we want to apply custom validation styles to
-                const forms = document.querySelectorAll(".needs-validation");
-                const result = document.getElementById("result");
-                // Loop over them and prevent submission
-                Array.prototype.slice.call(forms).forEach(function (form) {
-                  form.addEventListener(
-                    "submit",
-                    function (event) {
-                      if (!form.checkValidity()) {
-                        event.preventDefault();
-                        event.stopPropagation();
-        
-                        form.querySelectorAll(":invalid")[0].focus();
-                      } else {
-                        /*
-                         * Form Submission using fetch()
-                         */
-        
-                        const formData = new FormData(form);
-                        event.preventDefault();
-                        event.stopPropagation();
-                        const object = {};
-                        formData.forEach((value, key) => {
-                          object[key] = value;
-                        });
-                        const json = JSON.stringify(object);
-                        result.innerHTML = "Please wait...";
-        
-                        fetch("https://api.web3forms.com/submit", {
-                          method: "POST",
-                          headers: {
-                            "Content-Type": "application/json",
-                            Accept: "application/json"
-                          },
-                          body: json
-                        })
-                          .then(async (response) => {
-                            let json = await response.json();
-                            if (response.status == 200) {
-                              result.innerHTML = json.message;
-                              result.classList.remove("text-gray-500");
-                              result.classList.add("text-green-500");
-                            } else {
-                              console.log(response);
-                              result.innerHTML = json.message;
-                              result.classList.remove("text-gray-500");
-                              result.classList.add("text-red-500");
-                            }
-                          })
-                          .catch((error) => {
-                            console.log(error);
-                            result.innerHTML = "Something went wrong!";
-                          })
-                          .then(function () {
-                            form.reset();
-                            form.classList.remove("was-validated");
-                            setTimeout(() => {
-                              result.style.display = "none";
-                            }, 5000);
-                          });
-                      }
-                      form.classList.add("was-validated");
-                    },
-                    false
-                  );
-                });
-              })();
-            </script>
-        
-      
+        <title>Parcel Sandbox</title>
+        <meta charset="UTF-8">
       
     
+      
+    
+    
+
+    
+       
+      
+    
+        <script>
+            (function () {
+              "use strict";
+              /*
+               * Form Validation
+               */
+      
+              // Fetch all the forms we want to apply custom validation styles to
+              const forms = document.querySelectorAll(".needs-validation");
+              const result = document.getElementById("result");
+              // Loop over them and prevent submission
+              Array.prototype.slice.call(forms).forEach(function (form) {
+                form.addEventListener(
+                  "submit",
+                  function (event) {
+                    if (!form.checkValidity()) {
+                      event.preventDefault();
+                      event.stopPropagation();
+      
+                      form.querySelectorAll(":invalid")[0].focus();
+                    } else {
+                      /*
+                       * Form Submission using fetch()
+                       */
+      
+                      const formData = new FormData(form);
+                      event.preventDefault();
+                      event.stopPropagation();
+                      const object = {};
+                      formData.forEach((value, key) => {
+                        object[key] = value;
+                      });
+                      const json = JSON.stringify(object);
+                      result.innerHTML = "Please wait...";
+      
+                      fetch("https://api.web3forms.com/submit", {
+                        method: "POST",
+                        headers: {
+                          "Content-Type": "application/json",
+                          Accept: "application/json"
+                        },
+                        body: json
+                      })
+                        .then(async (response) => {
+                          let json = await response.json();
+                          if (response.status == 200) {
+                            result.innerHTML = json.message;
+                            result.classList.remove("text-gray-500");
+                            result.classList.add("text-green-500");
+                          } else {
+                            console.log(response);
+                            result.innerHTML = json.message;
+                            result.classList.remove("text-gray-500");
+                            result.classList.add("text-red-500");
+                          }
+                        })
+                        .catch((error) => {
+                          console.log(error);
+                          result.innerHTML = "Something went wrong!";
+                        })
+                        .then(function () {
+                          form.reset();
+                          form.classList.remove("was-validated");
+                          setTimeout(() => {
+                            result.style.display = "none";
+                          }, 5000);
+                        });
+                    }
+                    form.classList.add("was-validated");
+                  },
+                  false
+                );
+              });
+            })();
+          </script>
+      
+    
+    
   
-    <main>
-  
- <!--
+
+  <main>
+
+   <!--
       - #SIDEBAR
     -->
 
@@ -133,13 +134,13 @@
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="facepic.png" alt="Awedaxel" width="80">
+          <img src="facepic.png" alt="Tuhin Sarkar" width="80">
         </figure>
 
         <div class="info-content">
-          <h1 class="name" title="Awedaxel">Awedaxel</h1>
+          <h1 class="name" title="Tuhin Sarkar">Tuhin Sarkar</h1>
           
-          <p class="title">he/they</p>
+          <p class="title">he/him/his</p>
      
     
         </div>
@@ -167,13 +168,25 @@
             <div class="contact-info">
               <p class="contact-title">Email</p>
 
-              <a href="mailto:awedaxel@gmail.com" class="contact-link" style="color:#f8d66e;" target="_blank">awedaxel@gmail.com</a>
+              <a href="mailto:tuhinsarkar.me@gmail.com" class="contact-link" style="color:#f8d66e;" target="_blank">tuhinsarkar.me@gmail.com</a>
             
             </div>
 
           </li>
 
-          
+            <li class="contact-item">
+
+            <div class="icon-box">
+              <img src="calendar.png">
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Age</p>
+
+     <p style="color:#f8d66e;">14</p>            
+            </div>
+
+          </li>
           <li class="contact-item">
 
             <div class="icon-box">
@@ -182,7 +195,7 @@
 
             <div class="contact-info">
               <p class="contact-title">Discord</p>
-             <p style="color:#f8d66e;">@awedaxel</p>
+             <p style="color:#f8d66e;">@tuhinsarkar_in</p>
           
             </div>
           </li>
@@ -226,32 +239,29 @@
   
   
             <li class="social-item">
-              <a href="https://www.instagram.com/awedaxel" class="social-link">
+              <a href="https://www.instagram.com/Tuhin Sarkar" class="social-link">
                 <img src="instagram.png">
               </a>
             </li>
          
             
             <li class="social-item">
-              <a href="https://youtube.com/@awedaxel-xyz" class="social-link">
+              <a href="https://youtube.com/@tuhinsarkar-in" class="social-link">
                 <img src="youtube.png">
               </a>
             </li>
             <li class="social-item">
-              <a href="https://github.com/awedaxel" class="social-link">
+              <a href="https://github.com/tuhinsarkar-in" class="social-link">
                 <img src="github.png">
               </a>
             </li>
             <li class="social-item">
-              <a href="https://x.com/awedaxel" class="social-link">
+              <a href="https://x.com/tuhinsarkar.in" class="social-link">
                 <img src="x.png">
               </a>
             </li>
-            <li class="social-item">
-              <a href="https://reddit.com/u/awedaxel" class="social-link">
-                <img src="reddit.png">
-              </a>
-            </li>
+         
+          
       
   
           </ul>
@@ -262,49 +272,49 @@
       </aside>
   
   
-  
-  
-  
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
       <!--
-        - #main-content
+        - #NAVBAR
       -->
-  
-      <div class="main-content">
-  
-        <!--
-          - #NAVBAR
-        -->
-  
-        <nav class="navbar">
-  
-          <ul class="navbar-list">
-  
-            <li class="navbar-item">
-                <a class='navbar-link' data-nav-link href='/'>Home</a>
-              </li>
-    
-              <li class="navbar-item">
-                <a class='navbar-link ' data-nav-link href='education.html'>Education</a>
-              </li>
-    
-              <li class="navbar-item">
-                <a class='navbar-link' data-nav-link href='portfolio.html'>Portfolio</a>
-              </li>
-    
-              <li class="navbar-item">
-                <a class="navbar-link" data-nav-link="" href="https://sarknet.blogspot.com">Blog</a>
-              </li>
-    
-              <li class="navbar-item">
-                <a class='navbar-link active' data-nav-link href='contact.html'>Contact</a>
-              </li>
-          </ul>
-  
-        </nav>
-  
-  
-  
-  
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link="">Home</button>
+          </li>
+
+          <li class="navbar-item">
+            <a class="navbar-link" data-nav-link="" href="education.html">Education</a>
+          </li>
+
+          <li class="navbar-item">
+            <a class="navbar-link" data-nav-link="" href="portfolio.html">Portfolio</a>
+          </li>
+
+          <li class="navbar-item">
+            <a class="navbar-link" data-nav-link="" href="https://sarknet.blogspot.com">Blog</a>
+          </li>
+
+        
+
+          <li class="navbar-item">
+            <a class="navbar-link" data-nav-link="" href="contact.html">Contact</a>
+          </li>
+
+
+
+        </ul>
+
+      </nav>
+
 
         <!--
           - #CONTACT
